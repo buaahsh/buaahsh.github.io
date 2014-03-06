@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>把酒话桑麻 | H blog</title>
+  <title>C#中ref和out的使用小结 | H blog</title>
   <meta name="author" content="H">
   
-  <meta name="description" content="故人具鸡黍，邀我至田家。绿树村边合，青山郭外斜。
-开筵面场圃，把酒话桑麻。待到重阳日，还来就菊花。
-快一周的雾霾，一场淅淅沥沥的雨跟他say goodbye。这种状态很好啊，远处的霓虹灯隐约若现，近处的水洼点点滴滴，空气里的味道我说不清是雾霾跟雨水的化学反应还是真的是什么泥土的芳香，至少我没有深深的">
+  <meta name="description" content="最近在看《programming C#》，其中看到关于C#中的方法传参，看到ref和out感觉这个很有意思，在书中对这两种讲的也很清楚尤其是有一些例子，对这两种用法就显得更清楚了。
+ref是传递参数的地址，out是返回值，两者有一定的相同之处，不过也有不同点。使用ref前必须对变量赋值，out不用。">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="把酒话桑麻"/>
+  <meta property="og:title" content="C#中ref和out的使用小结"/>
   <meta property="og:site_name" content="H blog"/>
 
   
@@ -53,22 +52,55 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-02-26T15:50:42.000Z"><a href="/2014/02/26/bajiuhuasangma/">2月 26 2014</a></time>
+        <time datetime="2014-03-06T14:12:55.000Z"><a href="/2014/03/06/ref-and-out-in-csharp/">3月 6 2014</a></time>
       
       
   
-    <h1 class="title">把酒话桑麻</h1>
+    <h1 class="title">C#中ref和out的使用小结</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>故人具鸡黍，邀我至田家。绿树村边合，青山郭外斜。</p>
-<p>开筵面场圃，把酒话桑麻。待到重阳日，还来就菊花。</p>
-<p>快一周的雾霾，一场淅淅沥沥的雨跟他say goodbye。这种状态很好啊，远处的霓虹灯隐约若现，近处的水洼点点滴滴，空气里的味道我说不清是雾霾跟雨水的化学反应还是真的是什么泥土的芳香，至少我没有深深的吸上一口，感叹一句“沾衣欲湿杏花雨，吹面不寒杨柳风”，我绝逼在每年的春天，每个春天下雨的日子都会感叹这一句。</p>
-<p>把酒话桑麻，其实看到恩泽又能在北航陪我两年，我真想多赔上几杯，但一杯下肚，已经意气霓生了。我没有那么多好朋友，没那么多跟我交心的朋友，我从来不忌惮跟人吐心扉，只是心如气球，见不得刺。感谢那些信任过我的人...</p>
-<p>待到重阳日，还来就菊花。</p>
+        <p>最近在看《programming C#》，其中看到关于C#中的方法传参，看到ref和out感觉这个很有意思，在书中对这两种讲的也很清楚尤其是有一些例子，对这两种用法就显得更清楚了。</p>
+<p>ref是传递参数的地址，out是返回值，两者有一定的相同之处，不过也有不同点。使用ref前必须对变量赋值，out不用。out的函数会清空变量，即使变量已经赋值也不行，退出函数时所有out引用的变量都要赋值，ref引用的可以修改，也可以不修改。 </p>
+<p>区别可以参看下面的代码：
+    using System;
+    class TestApp
+    {
+    　static void outTest(out int x, out int y)
+    　{//离开这个函数前，必须对x和y赋值，否则会报错。 
+    　　//y = x; 
+    　　//上面这行会报错，因为使用了out后，x和y都清空了，需要重新赋值，即使调用函数前赋过值也不行 
+    　　x = 1;
+    　　y = 2;
+    　}
+    　static void refTest(ref int x, ref int y)
+    　{ 
+    　　x = 1;
+    　　y = x;
+    　}
+    　public static void Main()
+    　{
+    　　//out test
+    　　int a,b;
+    　　//out使用前，变量可以不赋值
+    　　outTest(out a, out b);
+    　　Console.WriteLine(&quot;a={0};b={1}&quot;,a,b);
+    　　int c=11,d=22;
+    　　outTest(out c, out d);
+    　　Console.WriteLine(&quot;c={0};d={1}&quot;,c,d);</p>
+<pre><code>　　//ref test
+　　int m,n;
+　　//refTest(ref m, ref n); 
+　　//上面这行会出错，ref使用前，变量必须赋值
 
+　　int o=11,p=22;
+　　refTest(ref o, ref p);
+　　Console.WriteLine(&quot;o={0};p={1}&quot;,o,p);
+　}
+}
+</code></pre>
       
     </div>
     <footer>
@@ -76,13 +108,13 @@
         
   
   <div class="categories">
-    <a href="/categories/life/">life</a>
+    <a href="/categories/code/">code</a>
   </div>
 
         
   
   <div class="tags">
-    <a href="/tags/生活/">生活</a>
+    <a href="/tags/c#/">c#</a>
   </div>
 
         

@@ -50,6 +50,76 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2014-03-06T14:12:55.000Z"><a href="/2014/03/06/ref-and-out-in-csharp/">3月 6 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/03/06/ref-and-out-in-csharp/">C#中ref和out的使用小结</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>最近在看《programming C#》，其中看到关于C#中的方法传参，看到ref和out感觉这个很有意思，在书中对这两种讲的也很清楚尤其是有一些例子，对这两种用法就显得更清楚了。</p>
+<p>ref是传递参数的地址，out是返回值，两者有一定的相同之处，不过也有不同点。使用ref前必须对变量赋值，out不用。out的函数会清空变量，即使变量已经赋值也不行，退出函数时所有out引用的变量都要赋值，ref引用的可以修改，也可以不修改。 </p>
+<p>区别可以参看下面的代码：
+    using System;
+    class TestApp
+    {
+    　static void outTest(out int x, out int y)
+    　{//离开这个函数前，必须对x和y赋值，否则会报错。 
+    　　//y = x; 
+    　　//上面这行会报错，因为使用了out后，x和y都清空了，需要重新赋值，即使调用函数前赋过值也不行 
+    　　x = 1;
+    　　y = 2;
+    　}
+    　static void refTest(ref int x, ref int y)
+    　{ 
+    　　x = 1;
+    　　y = x;
+    　}
+    　public static void Main()
+    　{
+    　　//out test
+    　　int a,b;
+    　　//out使用前，变量可以不赋值
+    　　outTest(out a, out b);
+    　　Console.WriteLine(&quot;a={0};b={1}&quot;,a,b);
+    　　int c=11,d=22;
+    　　outTest(out c, out d);
+    　　Console.WriteLine(&quot;c={0};d={1}&quot;,c,d);</p>
+<pre><code>　　//ref test
+　　int m,n;
+　　//refTest(ref m, ref n); 
+　　//上面这行会出错，ref使用前，变量必须赋值
+
+　　int o=11,p=22;
+　　refTest(ref o, ref p);
+　　Console.WriteLine(&quot;o={0};p={1}&quot;,o,p);
+　}
+}
+</code></pre>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2014-02-26T15:50:42.000Z"><a href="/2014/02/26/bajiuhuasangma/">2月 26 2014</a></time>
       
       
@@ -97,7 +167,7 @@
     </header>
     <div class="entry">
       
-        <p>帖一些C语言的代码吧，一些基础的，较为简单的代码，没事的时候可以复习一下， 一直说这学期还是刷(JudgeOnline)[<a href="http://poj.org" target="_blank">http://poj.org</a>] 还是没做到啊，等节奏定下来就开始，一共三千多道题，真心爽。。。</p>
+        <p>帖一些C语言的代码吧，一些基础的，较为简单的代码，没事的时候可以复习一下， 一直说这学期还是刷<a href="http://poj.org" target="_blank">JudgeOnline</a> 还是没做到啊，等节奏定下来就开始，一共三千多道题，真心爽。。。</p>
 <p>还是先搞点简单的吧。</p>
 <p>快排,核心思想就是每次找到一个元素的合适位置，同时保证前面的元素都小于他，后面的元素都大于他。</p>
 <pre><code>#include &lt;stdio.h&gt;
@@ -255,7 +325,7 @@ void main()
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/code/">code</a><small>1</small></li>
+    <li><a href="/categories/code/">code</a><small>2</small></li>
   
     <li><a href="/categories/life/">life</a><small>2</small></li>
   
@@ -269,7 +339,7 @@ void main()
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/c/" style="font-size: 10.00px;">c</a><a href="/tags/gensim/" style="font-size: 10.00px;">gensim</a><a href="/tags/信息检索/" style="font-size: 10.00px;">信息检索</a><a href="/tags/生活/" style="font-size: 20.00px;">生活</a><a href="/tags/自然语言处理/" style="font-size: 10.00px;">自然语言处理</a>
+    <a href="/tags/c/" style="font-size: 10.00px;">c</a><a href="/tags/c#/" style="font-size: 10.00px;">c#</a><a href="/tags/gensim/" style="font-size: 10.00px;">gensim</a><a href="/tags/信息检索/" style="font-size: 10.00px;">信息检索</a><a href="/tags/生活/" style="font-size: 20.00px;">生活</a><a href="/tags/自然语言处理/" style="font-size: 10.00px;">自然语言处理</a>
   </div>
 </div>
 
