@@ -50,6 +50,50 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2014-11-09T11:41:32.000Z"><a href="/2014/11/09/life-again/">11月 9 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/11/09/life-again/">被推着走，跟着生活流</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>周末回了一次家，无意中谁问了一句，最近还有日记吗？日记？哦，初一就开始写的东西，断断续续如果现在还没有停的话，想想已经有10年了。还好hexo还在支持，就用这个Template好了，放一些想说的话，估计也没人来看，挺好的，挺好的。</p>
+<p>上次还是3月，过了8个月，讲讲我最近的近况吧。。</p>
+<p>做完了毕设，还在负责网络中心的项目，现在来看bug越来越少，对网站开发有了一定的了解，更加期待尝试一下MVC。当初感觉这个项目毫无技术含量，一路做来用最原始的Servlet，反而
+对网站的前端后端有了一定的了解，尽管现在是个移动的时代，懂一些web的开发总不是坏事。但愿将来也可也靠这个做点私活。</p>
+<p>大创也有了个结果，优秀固然是好，不知道还能不能报销实在是蛋碎，谁知道呢？大创总体来说没有啥收获，最后的加班总算是让这个事情有了个结果，要不然也是尴尬，正如ppt中讲的
+如果有收获，我想那个python的爬虫框架真心不错，但之后跟梁师傅交流，又提到了<a href="http://scrapy.org/" target="_blank">Scrapy</a>的强大。如果以后再需要，这两个工具有可能都需要好好使用，再就是
+那套NLP的接口了，是一个长期的计划，这是不是以后的自己的“黑科技”，我不敢说，但这套工具应该要好好做。</p>
+<p>再就是M$,进展可以接受吧，可能会吧TLC这个工具尝试在local上试试，不得不说这个还是方便的很。其他的? EQA还在做，现在来看v0还是比较乐观的，我想着这应该是最完整的一个东西了
+还是很兴奋的。</p>
+<p>好了，可以讲讲其他的了。现在如果问我如果要创业，你是为了什么，我想，大概就是一笔不错的收入吧，没有了之前要做出来一款产品的期待，也许正是那句话， 小孩子才谈产品，大人
+只讲利益，我觉得很对，现在给我的时间更要好好珍惜，能不能自己做一些好的产品，来上一笔收入，还是个问题。keep thinking，keep trying， keep doing。</p>
+<p>NLP的三大刚需：搜索，输入法和翻译（包括词典），如果可以想到第4个？我想那一定是个point。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2014-03-10T02:40:06.000Z"><a href="/2014/03/10/leetcode-1/">3月 10 2014</a></time>
       
       
@@ -295,42 +339,6 @@ void main()
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-02-24T01:47:59.000Z"><a href="/2014/02/24/some-algorithms-about-nlp/">2月 24 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/02/24/some-algorithms-about-nlp/">在NLP中常见的一些算法 TF-IDF</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><strong>IT-IDF</strong></p>
-<p>首先说一下<a href="http://zh.wikipedia.org/wiki/TF-IDF" target="_blank">TF-IDF</a>，我想按照不同的算法来描述其在不同场景下的应用，有可能会发现其中的相通之处。TF-IDF在wiki上的解释是<em>一种用于资讯检索与文本挖掘的常用加权技术</em>，在吴军的《数学之美》中的叙述是<em>TF-IDF是目前通用的关键词重要性的度量</em>。根据吴军老师的定义TF-IDF最最基础的一个应用就是在<strong>广泛领域</strong>内的<strong>关键词提取</strong>，不管是新闻还是专利，不管是网页还是摘要。作为通用的关键词重要性的度量方法，TF-IDF真的是简单高效。当然，在关键词提取的应用中除了TF-IDF的得分（依据的假设见<a href="http://zh.wikipedia.org/wiki/TF-IDF" target="_blank">TF-IDF</a>），还可以考虑词语第一次出现的位置（依据的假设是在一篇文章中出现的越早越重要），标题的权重（假设是标题常常会出现关键词）等，但我在之前的试验中发现其他的一些衡量标准可以作为补充和改进，但TF-IDF的重要性不容忽视。</p>
-<p>讲完了TF-IDF最简单的应用，这里会提到一个很有用的topic model的工具<a href="http://radimrehurek.com/gensim/" target="_blank">gensim</a>，python语言，google出品，其中重要的几个模型就是TF-IDF,LSI(LSA),LDA和word2vec。当我第一次接触gensim，我不是很能理解作者Radim为什么要在topic model中加入这么简单的东西。在我不断的使用过程中自己感受是这样的，在我们处理一份语料（语料(corpus)由多篇文章(doc)组成）的时候,VSM（vector space model）是必不可少的，把一篇文章用向量表示，其中每个维度是所包含词的频率，简单来时VSM就是这个。去停用词和低频词是降维的首要选择，但这种做法不能避免的问题是停用词是有限的，有可能有疏漏，其次语料的来源相对单一，比如都来自于影视领域等等，那么有可能想演员、电影这些词的尽管不是停用词但本身在各个文章中都有出现，意义不大。这个时候TF-IDF就发挥了他的作用，将TF-IDF的得分填充doc和word的向量，得到的矩阵要更加合理。</p>
-<p>是不是TF-IDF更多的应用是不是就是在gensim的一个模型呢？在把文章转换为向量之后，尤其是较为合理的向量之后，可以使用这些向量来完成，篇章的相似度计算，聚类，当然句子级的向量，就可以做摘要。说白了还是TF-IDF完成了对词语重要性的打分。而且在实验过程中，经过TF-IDF打分之后再进行了相似度计算、聚类的效果要好于直接的词频得分。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -354,7 +362,7 @@ void main()
   
     <li><a href="/categories/code/">code</a><small>3</small></li>
   
-    <li><a href="/categories/life/">life</a><small>2</small></li>
+    <li><a href="/categories/life/">life</a><small>3</small></li>
   
     <li><a href="/categories/nlp/">nlp</a><small>1</small></li>
   

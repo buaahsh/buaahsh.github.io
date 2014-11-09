@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>C#中ref和out的使用小结 | H blog</title>
+  <title>被推着走，跟着生活流 | H blog</title>
   <meta name="author" content="H">
   
-  <meta name="description" content="最近在看《programming C#》，其中看到关于C#中的方法传参，看到ref和out感觉这个很有意思，在书中对这两种讲的也很清楚尤其是有一些例子，对这两种用法就显得更清楚了。
-ref是传递参数的地址，out是返回值，两者有一定的相同之处，不过也有不同点。使用ref前必须对变量赋值，out不用。">
+  <meta name="description" content="周末回了一次家，无意中谁问了一句，最近还有日记吗？日记？哦，初一就开始写的东西，断断续续如果现在还没有停的话，想想已经有10年了。还好hexo还在支持，就用这个Template好了，放一些想说的话，估计也没人来看，挺好的，挺好的。
+上次还是3月，过了8个月，讲讲我最近的近况吧。。
+做完了毕设，还在负">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="C#中ref和out的使用小结"/>
+  <meta property="og:title" content="被推着走，跟着生活流"/>
   <meta property="og:site_name" content="H blog"/>
 
   
@@ -52,56 +53,29 @@ ref是传递参数的地址，out是返回值，两者有一定的相同之处�
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-03-06T14:12:55.000Z"><a href="/2014/03/06/ref-and-out-in-csharp/">3月 6 2014</a></time>
+        <time datetime="2014-11-09T11:41:32.000Z"><a href="/2014/11/09/life-again/">11月 9 2014</a></time>
       
       
   
-    <h1 class="title">C#中ref和out的使用小结</h1>
+    <h1 class="title">被推着走，跟着生活流</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>最近在看《programming C#》，其中看到关于C#中的方法传参，看到ref和out感觉这个很有意思，在书中对这两种讲的也很清楚尤其是有一些例子，对这两种用法就显得更清楚了。</p>
-<p>ref是传递参数的地址，out是返回值，两者有一定的相同之处，不过也有不同点。使用ref前必须对变量赋值，out不用。out的函数会清空变量，即使变量已经赋值也不行，退出函数时所有out引用的变量都要赋值，ref引用的可以修改，也可以不修改。 </p>
-<p>区别可以参看下面的代码：</p>
-<pre><code>using System;
-class TestApp
-{
-　static void outTest(out int x, out int y)
-　{//离开这个函数前，必须对x和y赋值，否则会报错。 
-　　//y = x; 
-　　//上面这行会报错，因为使用了out后，x和y都清空了，需要重新赋值，即使调用函数前赋过值也不行 
-　　x = 1;
-　　y = 2;
-　}
-　static void refTest(ref int x, ref int y)
-　{ 
-　　x = 1;
-　　y = x;
-　}
-　public static void Main()
-　{
-　　//out test
-　　int a,b;
-　　//out使用前，变量可以不赋值
-　　outTest(out a, out b);
-　　Console.WriteLine(&quot;a={0};b={1}&quot;,a,b);
-　　int c=11,d=22;
-　　outTest(out c, out d);
-　　Console.WriteLine(&quot;c={0};d={1}&quot;,c,d);
+        <p>周末回了一次家，无意中谁问了一句，最近还有日记吗？日记？哦，初一就开始写的东西，断断续续如果现在还没有停的话，想想已经有10年了。还好hexo还在支持，就用这个Template好了，放一些想说的话，估计也没人来看，挺好的，挺好的。</p>
+<p>上次还是3月，过了8个月，讲讲我最近的近况吧。。</p>
+<p>做完了毕设，还在负责网络中心的项目，现在来看bug越来越少，对网站开发有了一定的了解，更加期待尝试一下MVC。当初感觉这个项目毫无技术含量，一路做来用最原始的Servlet，反而
+对网站的前端后端有了一定的了解，尽管现在是个移动的时代，懂一些web的开发总不是坏事。但愿将来也可也靠这个做点私活。</p>
+<p>大创也有了个结果，优秀固然是好，不知道还能不能报销实在是蛋碎，谁知道呢？大创总体来说没有啥收获，最后的加班总算是让这个事情有了个结果，要不然也是尴尬，正如ppt中讲的
+如果有收获，我想那个python的爬虫框架真心不错，但之后跟梁师傅交流，又提到了<a href="http://scrapy.org/" target="_blank">Scrapy</a>的强大。如果以后再需要，这两个工具有可能都需要好好使用，再就是
+那套NLP的接口了，是一个长期的计划，这是不是以后的自己的“黑科技”，我不敢说，但这套工具应该要好好做。</p>
+<p>再就是M$,进展可以接受吧，可能会吧TLC这个工具尝试在local上试试，不得不说这个还是方便的很。其他的? EQA还在做，现在来看v0还是比较乐观的，我想着这应该是最完整的一个东西了
+还是很兴奋的。</p>
+<p>好了，可以讲讲其他的了。现在如果问我如果要创业，你是为了什么，我想，大概就是一笔不错的收入吧，没有了之前要做出来一款产品的期待，也许正是那句话， 小孩子才谈产品，大人
+只讲利益，我觉得很对，现在给我的时间更要好好珍惜，能不能自己做一些好的产品，来上一笔收入，还是个问题。keep thinking，keep trying， keep doing。</p>
+<p>NLP的三大刚需：搜索，输入法和翻译（包括词典），如果可以想到第4个？我想那一定是个point。</p>
 
-　　//ref test
-　　int m,n;
-　　//refTest(ref m, ref n); 
-　　//上面这行会出错，ref使用前，变量必须赋值
-
-　　int o=11,p=22;
-　　refTest(ref o, ref p);
-　　Console.WriteLine(&quot;o={0};p={1}&quot;,o,p);
-　}
-}
-</code></pre>
       
     </div>
     <footer>
@@ -109,13 +83,13 @@ class TestApp
         
   
   <div class="categories">
-    <a href="/categories/code/">code</a>
+    <a href="/categories/life/">life</a>
   </div>
 
         
   
   <div class="tags">
-    <a href="/tags/c#/">c#</a>
+    <a href="/tags/生活/">生活</a>
   </div>
 
         
