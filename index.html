@@ -50,6 +50,62 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2014-11-12T14:47:35.000Z"><a href="/2014/11/12/algoda-1/">11月 12 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/11/12/algoda-1/">AlgoDA-1</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Divide and Conquer - 分治</p>
+<p>把原始问题分解为若干子问题，在逐个解决各个子问题的基础上，得到原始问题的解。 经常和递归联系在一起。因此如果计算时间复杂度，其递推公式很重要。</p>
+<h2 id="-">几个常见的使用分治的问题</h2>
+<ul>
+<li>FindMaxMin</li>
+</ul>
+<p>n个整数元素的数组A[1… n], n 为2的幂， 传统算法的比较次数为2n-2，采用分治得到的公式为 C(n) = 1 n=2； C(n) = 2C(n/2)+2 n &gt; 2 根据递推公式可以得到其比较的次数为 3/2n-2，相对传统算法得到了提升。</p>
+<ul>
+<li>二分查找</li>
+</ul>
+<p>在已经排序的数组上进行二分查找，其时间复杂度了log(n)。其递推公式为(n) = 1 n=1 ； C(n) = C(n/2)+1 n&gt;1</p>
+<ul>
+<li>合并排序</li>
+</ul>
+<p>思路很简单，将待排序数组对半分成两个子数组；分别对两个子数组排序；将两个已排序的子数组合并。给出最大笔记次数和最小比较次数的递推公式。
+ C(n) = 0 n=1 ；C(n) = 2C(n/2)+n-1 n&gt;1 ||  C(n) = 0 n=1 ; C(n) = 2C(n/2)+n/2 n&gt;1</p>
+<ul>
+<li><p>寻找第K小的元素</p>
+<p>比较朴素的做法有，直接查找，找到第1小，然后找第2小。。一直到第k小，时间复杂度应该是 kn，如果k接近 n/2，那么复杂度为 n*n/2.第二种比较朴素的做法进行排序，nlog(n)的复杂度。在分治的算法中有一个办法，比较复杂，就直接贴算法的照片了。
+<img src="./jpg/Algo-1.jpg" alt="mahua"></p>
+<p>除了分治之外，还有减治和变治</p>
+<p>减治：每次算法迭代总是从实例规模中减去一个规模相同的常量。经常地，这个常量等于一。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2014-11-09T11:41:32.000Z"><a href="/2014/11/09/life-again/">11月 9 2014</a></time>
       
       
@@ -255,90 +311,6 @@ class TestApp
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-02-24T13:04:00.000Z"><a href="/2014/02/24/2-24-c-algorithm/">2月 24 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/02/24/2-24-c-algorithm/">2-24-c-algorithm</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>帖一些C语言的代码吧，一些基础的，较为简单的代码，没事的时候可以复习一下， 一直说这学期还是刷<a href="http://poj.org" target="_blank">JudgeOnline</a> 还是没做到啊，等节奏定下来就开始，一共三千多道题，真心爽。。。</p>
-<p>还是先搞点简单的吧。</p>
-<p>快排,核心思想就是每次找到一个元素的合适位置，同时保证前面的元素都小于他，后面的元素都大于他。</p>
-<pre><code>#include &lt;stdio.h&gt;
-
-
-int findSeat(int l[],int low,int high)
-{
-    int prvotkey=l[low];
-    int temp;
-    temp=l[low];
-    while (low&lt;high)
-    {
-        while (low&lt;high&amp;&amp;l[high]&gt;=prvotkey)
-            --high;
-        l[low]=l[high];
-        while (low&lt;high&amp;&amp;l[low]&lt;=prvotkey)
-            ++low;
-        l[high]=l[low];
-    }
-    l[low]=temp;
-    return low;
-}
-void qsort(int l[],int low,int high)
-{
-    int prvotloc;
-    if(low&lt;high)
-    {
-        prvotloc=findSeat(l,low,high);    //将第一次排序的结果作为枢轴
-        qsort(l,low,prvotloc-1); //递归调用排序 由low 到prvotloc-1
-        qsort(l,prvotloc+1,high); //递归调用排序 由 prvotloc+1到 high
-    }
-}
-
-void quicksort(int l[],int n)
-{
-    qsort(l,1,n); //第一个作为枢轴 ，从第一个排到第n个
-}
-void main()
-{
-  int a[200],n,i;
-  printf(&quot;n=&quot;);
-  scanf(&quot;%d&quot;,&amp;n);
-  for (i=1;i&lt;=n;i++)
-    scanf(&quot;%d&quot;,&amp;a[i]);
-  quicksort(a,n);
-  printf(&quot;right number:&quot;);
-  for(i=1;i&lt;=n;i++)
-    printf(&quot;%d &quot;,a[i]);
-  printf(&quot;\n&quot;);
-}
-</code></pre><p>排序大概就一个快排吧，冒泡、选择就算了。接下来是些字符串处理的吧。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -360,7 +332,7 @@ void main()
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/code/">code</a><small>3</small></li>
+    <li><a href="/categories/code/">code</a><small>4</small></li>
   
     <li><a href="/categories/life/">life</a><small>3</small></li>
   
