@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>AlgoDA-1 | H blog</title>
+  <meta name="author" content="H">
+  
+  <meta name="description" content="Divide and Conquer - 分治
+把原始问题分解为若干子问题，在逐个解决各个子问题的基础上，得到原始问题的解。 经常和递归联系在一起。因此如果计算时间复杂度，其递推公式很重要。
+几个常见的使用分治的问题
+
+FindMaxMin
+
+n个整数元素的数组A[1… n], n 为2的幂， 传统">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="AlgoDA-1"/>
+  <meta property="og:site_name" content="H blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="H blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">H blog</a></h1>
+  <h2><a href="/">HuangShaohan&#39;s Blog</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-11-12T14:47:35.000Z"><a href="/2014/11/12/algoda-1/">11月 12 2014</a></time>
+      
+      
+  
+    <h1 class="title">AlgoDA-1</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Divide and Conquer - 分治</p>
+<p>把原始问题分解为若干子问题，在逐个解决各个子问题的基础上，得到原始问题的解。 经常和递归联系在一起。因此如果计算时间复杂度，其递推公式很重要。</p>
+<h2 id="几个常见的使用分治的问题">几个常见的使用分治的问题</h2>
+<ul>
+<li>FindMaxMin</li>
+</ul>
+<p>n个整数元素的数组A[1… n], n 为2的幂， 传统算法的比较次数为2n-2，采用分治得到的公式为 C(n) = 1 n=2； C(n) = 2C(n/2)+2 n &gt; 2 根据递推公式可以得到其比较的次数为 3/2n-2，相对传统算法得到了提升。</p>
+<ul>
+<li>二分查找</li>
+</ul>
+<p>在已经排序的数组上进行二分查找，其时间复杂度了log(n)。其递推公式为(n) = 1 n=1 ； C(n) = C(n/2)+1 n&gt;1</p>
+<ul>
+<li>合并排序</li>
+</ul>
+<p>思路很简单，将待排序数组对半分成两个子数组；分别对两个子数组排序；将两个已排序的子数组合并。给出最大笔记次数和最小比较次数的递推公式。<br> C(n) = 0 n=1 ；C(n) = 2C(n/2)+n-1 n&gt;1 ||  C(n) = 0 n=1 ; C(n) = 2C(n/2)+n/2 n&gt;1</p>
+<ul>
+<li><p>寻找第K小的元素</p>
+<p>比较朴素的做法有，直接查找，找到第1小，然后找第2小。。一直到第k小，时间复杂度应该是 kn，如果k接近 n/2，那么复杂度为 n*n/2.第二种比较朴素的做法进行排序，nlog(n)的复杂度。在分治的算法中有一个办法，比较复杂，就直接贴算法的照片了。</p>
+<p>除了分治之外，还有减治和变治</p>
+<p>减治：每次算法迭代总是从实例规模中减去一个规模相同的常量。经常地，这个常量等于一。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/code/">code</a>
+  </div>
+
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"buaahsh"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/code/">code</a><small>4</small></li>
+  
+    <li><a href="/categories/life/">life</a><small>5</small></li>
+  
+    <li><a href="/categories/nlp/">nlp</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/algorithm/" style="font-size: 15.00px;">algorithm</a><a href="/tags/c/" style="font-size: 15.00px;">c</a><a href="/tags/c/" style="font-size: 15.00px;">c#</a><a href="/tags/gensim/" style="font-size: 15.00px;">gensim</a><a href="/tags/python/" style="font-size: 15.00px;">python</a><a href="/tags/信息检索/" style="font-size: 15.00px;">信息检索</a><a href="/tags/生活/" style="font-size: 20.00px;">生活</a><a href="/tags/自然语言处理/" style="font-size: 15.00px;">自然语言处理</a><a href="/tags/����/" style="font-size: 10.00px;">����</a>
+  </div>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>HuangShaohan</li>
+<li>Pseudo-WenQing & Fan.</li>
+<li>Maybe a programmer with python,java,etc.</li>
+<li>nlp. machine learning. data mining.</li>
+</ul>
+</div>
+
+  <div class="widget tag">
+<h3 class="title">基友情深</h3>
+<ul class="entry">
+<li><a href="http://liusongtao.tk/" title="文青刘大局的部落格" target="_blank">文青刘大局的部落格</a></li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 H
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
