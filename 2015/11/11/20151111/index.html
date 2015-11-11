@@ -6,11 +6,11 @@
   <title>1111 | H blog</title>
   <meta name="author" content="H">
   
-  <meta name="description" content="˫ʮһ���������ְ�
+  <meta name="description" content="双十一、、、剁手啊
 Python integer objects implementation
-������Python����������ʵ�֣�����һ����������ô���Ƶģ��Ҿ��ÿ���ѧ�����������ɡ�
+讲的是Python整数对象的实现，来看一个语言是怎么设计的，我觉得可以学到的有两点吧。
 
-When a block of integer o">
+When a block of integer objects is allocated by Python, t">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -65,18 +65,22 @@ When a block of integer o">
     </header>
     <div class="entry">
       
-        <p>˫ʮһ���������ְ�</p>
+        <p>双十一、、、剁手啊</p>
 <h3 id="Python_integer_objects_implementation"><a href="http://www.laurentluce.com/posts/python-integer-objects-implementation/" target="_blank" rel="external">Python integer objects implementation</a></h3>
-<p>������Python����������ʵ�֣�����һ����������ô���Ƶģ��Ҿ��ÿ���ѧ�����������ɡ�</p>
+<p>讲的是Python整数对象的实现，来看一个语言是怎么设计的，我觉得可以学到的有两点吧。</p>
 <ol>
-<li><p>When a block of integer objects is allocated by Python, the objects have no value assigned to them yet. We call them free integer objects ready to be used. A value will be assigned to the next free object when a new integer value is used in your program. No memory allocation will be required when a free integer object��s value is set so it will be fast.<br>Python ������ʹ��ǰ����һЩ�����������ڴ棬 �ڸ��������������ڴ���ʱ��ֱ�Ӹ������е������������������ٶ�</p>
+<li><p>When a block of integer objects is allocated by Python, the objects have no value assigned to them yet. We call them free integer objects ready to be used. A value will be assigned to the next free object when a new integer value is used in your program. No memory allocation will be required when a free integer object’s value is set so it will be fast.<br>Python 在整数使用前申请一些整数对象的内存， 在给整数对象分配内存块时，直接赋给空闲的整数对象。来提高速度</p>
 </li>
-<li><p>A specific structure is used to refer small integers and share them so access is fast. It is an array of 262 pointers to integer objects. Those integer objects are allocated during initialization in a block of integer objects we saw above. The small integers range is from -5 to 256. Many Python programs spend a lot of time using integers in that range so this is a smart decision.<br>Python���ĵڶ�������ǰΪһ����С���������˿ռ䣬�Ա����ٷ���</p>
+<li><p>A specific structure is used to refer small integers and share them so access is fast. It is an array of 262 pointers to integer objects. Those integer objects are allocated during initialization in a block of integer objects we saw above. The small integers range is from -5 to 256. Many Python programs spend a lot of time using integers in that range so this is a smart decision.<br>Python做的第二点是提前为一部分小整数分配了空间，以便快速访问</p>
 </li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a = <span class="number">256</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>b = <span class="number">256</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</div><div class="line"><span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="number">2.</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a = <span class="number">257</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>b = <span class="number">257</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</div><div class="line"><span class="keyword">False</span></div><div class="line"></div><div class="line"><span class="number">3.</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a, b = <span class="number">257</span>, <span class="number">257</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</div><div class="line"><span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="number">4.</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a = <span class="number">257</span>; b = <span class="number">257</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</div><div class="line"><span class="keyword">False</span></div></pre></td></tr></table></figure>
 
-<p>����һ����<a href="http://www.cnblogs.com/fengliucaizi/p/4940380.html" target="_blank" rel="external">Python �ڴ�����</a>�ģ����ڸ��Ӱɣ�����ʱ���ٿ��� ����һ��С�ӣ�֮ǰ�о�����ѧ��ģ�����и������������ģ��������ͣ����쿴��scikit-learn����ר�Ÿ������� <a href="http://scikit-learn.org/dev/modules/manifold.html" target="_blank" rel="external">Manifold Learning</a>������Ҳ�ò�����markһ�°�</p>
+<p>还有一个讲<a href="http://www.cnblogs.com/fengliucaizi/p/4940380.html" target="_blank" rel="external">Python 内存管理</a>的，先挖个坑吧，等有时间再看。 再填一个小坑，之前研究生数学建模里面有个题是做分类的，针对流型，今天看到scikit-learn就有专门干这个的 <a href="http://scikit-learn.org/dev/modules/manifold.html" target="_blank" rel="external">Manifold Learning</a>，这个也用不到，mark一下吧</p>
+<h3 id="multiprocessing"><a href="http://www.cnblogs.com/kaituorensheng/p/4445418.html" target="_blank" rel="external">multiprocessing</a></h3>
+<p>这个主要是明白在Python写程序的时候更倾向多进程而不是多线程。具体如何实现，如果要用的时候可以参考这个</p>
+<h3 id="Python_爬虫的工具列表_附Github代码下载链接"><a href="http://www.36dsj.com/archives/36417" target="_blank" rel="external">Python 爬虫的工具列表 附Github代码下载链接</a></h3>
+<p>我只能说这个总结的太全了。。网络、爬虫架构、HTML解析、文本处理、特定格式的处理、自然语言处理、、、</p>
 
       
     </div>
@@ -91,7 +95,7 @@ When a block of integer o">
         
   
   <div class="tags">
-    <a href="/tags/����/">����</a>
+    <a href="/tags/生活/">生活</a>
   </div>
 
         
@@ -164,7 +168,7 @@ var duoshuoQuery = {short_name:"buaahsh"};
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/algorithm/" style="font-size: 10.00px;">algorithm</a><a href="/tags/c/" style="font-size: 10.00px;">c</a><a href="/tags/c/" style="font-size: 10.00px;">c#</a><a href="/tags/gensim/" style="font-size: 10.00px;">gensim</a><a href="/tags/python/" style="font-size: 10.00px;">python</a><a href="/tags/信息检索/" style="font-size: 10.00px;">信息检索</a><a href="/tags/生活/" style="font-size: 20.00px;">生活</a><a href="/tags/自然语言处理/" style="font-size: 10.00px;">自然语言处理</a><a href="/tags/����/" style="font-size: 10.00px;">����</a>
+    <a href="/tags/algorithm/" style="font-size: 15.00px;">algorithm</a><a href="/tags/c/" style="font-size: 15.00px;">c</a><a href="/tags/c/" style="font-size: 15.00px;">c#</a><a href="/tags/gensim/" style="font-size: 15.00px;">gensim</a><a href="/tags/python/" style="font-size: 15.00px;">python</a><a href="/tags/信息检索/" style="font-size: 15.00px;">信息检索</a><a href="/tags/生活/" style="font-size: 20.00px;">生活</a><a href="/tags/自然语言处理/" style="font-size: 15.00px;">自然语言处理</a><a href="/tags/����/" style="font-size: 10.00px;">����</a>
   </div>
 </div>
 
