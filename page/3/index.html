@@ -50,6 +50,77 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2014-03-06T14:12:55.000Z"><a href="/2014/03/06/ref-and-out-in-csharp/">3月 6 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/03/06/ref-and-out-in-csharp/">C#中ref和out的使用小结</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>最近在看《programming C#》，其中看到关于C#中的方法传参，看到ref和out感觉这个很有意思，在书中对这两种讲的也很清楚尤其是有一些例子，对这两种用法就显得更清楚了。</p>
+<p>ref是传递参数的地址，out是返回值，两者有一定的相同之处，不过也有不同点。使用ref前必须对变量赋值，out不用。out的函数会清空变量，即使变量已经赋值也不行，退出函数时所有out引用的变量都要赋值，ref引用的可以修改，也可以不修改。 </p>
+<p>区别可以参看下面的代码：</p>
+<pre><code><span class="keyword">using</span> <span class="type">System</span>;
+class <span class="type">TestApp</span>
+{
+　<span class="keyword">static</span> <span class="type">void</span> outTest(<span class="keyword">out</span> <span class="type">int</span> x, <span class="keyword">out</span> <span class="type">int</span> y)
+　{//离开这个函数前，必须对x和y赋值，否则会报错。 
+　　//y = x; 
+　　//上面这行会报错，因为使用了<span class="keyword">out</span>后，x和y都清空了，需要重新赋值，即使调用函数前赋过值也不行 
+　　x = <span class="number">1</span>;
+　　y = <span class="number">2</span>;
+　}
+　<span class="keyword">static</span> <span class="type">void</span> refTest(<span class="keyword">ref</span> <span class="type">int</span> x, <span class="keyword">ref</span> <span class="type">int</span> y)
+　{ 
+　　x = <span class="number">1</span>;
+　　y = x;
+　}
+　public <span class="keyword">static</span> <span class="type">void</span> <span class="type">Main</span>()
+　{
+　　//<span class="keyword">out</span> test
+　　<span class="type">int</span> a,b;
+　　//<span class="keyword">out</span>使用前，变量可以不赋值
+　　outTest(<span class="keyword">out</span> a, <span class="keyword">out</span> b);
+　　<span class="type">Console</span>.<span class="type">WriteLine</span>(<span class="string">"a={0};b={1}"</span>,a,b);
+　　<span class="type">int</span> c=<span class="number">11</span>,d=<span class="number">22</span>;
+　　outTest(<span class="keyword">out</span> c, <span class="keyword">out</span> d);
+　　<span class="type">Console</span>.<span class="type">WriteLine</span>(<span class="string">"c={0};d={1}"</span>,c,d);
+
+　　//<span class="keyword">ref</span> test
+　　<span class="type">int</span> m,n;
+　　//refTest(<span class="keyword">ref</span> m, <span class="keyword">ref</span> n); 
+　　//上面这行会出错，<span class="keyword">ref</span>使用前，变量必须赋值
+
+　　<span class="type">int</span> o=<span class="number">11</span>,p=<span class="number">22</span>;
+　　refTest(<span class="keyword">ref</span> o, <span class="keyword">ref</span> p);
+　　<span class="type">Console</span>.<span class="type">WriteLine</span>(<span class="string">"o={0};p={1}"</span>,o,p);
+　}
+}
+</code></pre>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2014-02-26T15:50:42.000Z"><a href="/2014/02/26/bajiuhuasangma/">2月 26 2014</a></time>
       
       
