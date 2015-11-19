@@ -50,6 +50,65 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2014-03-10T02:40:06.000Z"><a href="/2014/03/10/leetcode-1/">3月 10 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/03/10/leetcode-1/">leetcode-1</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>之前说是要刷北大的<a href="http://poj.org" target="_blank" rel="external">JudgeOnline</a>，结果种种理由没有去刷，但实验室的师兄告诉了我一个不错的在线编程，讨论的网站，题目不是很多，也不是针对ACM，主要是针对面试的，我想这个应该就很有用了，废话不说先贴网站，<a href="http://oj.leetcode.com/" target="_blank" rel="external">LeetCode</a></p>
+<p>LeetCode OJ is a platform for preparing technical coding interviews. Pick from an expanding library of more than 140 questions, code and submit your solution to see if you have solved it correctly. It is that easy!</p>
+<p>bootstrap的风格，很是nice，150+的题目，据说刷上几遍面google的实习生的coding interview都有了机会,尽管现在看上去没有什么用，但算法这个东西毕竟是计算机的基础之一，有时候在想计算机科班出身能比别人强在哪？培训机构出来的也可以做网站、写各种app，甚至像hadoop，mapreduce也不在话下。那科班有什么意义呢，新东方学电脑好了，我想对算法的敏感度是一个不得不提的问题，在上课期间，学C，学数据结构，等等这些无非不是让你对算法有个意识，对数据结构有个意识，而不再是简简单单的解决问题，多了这一层次的思考也许就能写出更好的代码。</p>
+<p>废话不多说了，我在leetcode里面刷的题目也不多，但是对比较好的题目总结一下肯定不是坏事。而且这个习惯要坚持下去。</p>
+<p><strong><a href="http://oj.leetcode.com/problems/evaluate-reverse-polish-notation/" target="_blank" rel="external">Evaluate Reverse Polish Notation</a></strong></p>
+<p>波兰式，应该是学栈最经典的题目吧,LIFO，o(n)的复杂度。</p>
+<p><strong><a href="http://oj.leetcode.com/problems/single-number/" target="_blank" rel="external">Single Number</a></strong></p>
+<p>Given an array of integers, every element appears twice except for one. Find that single one.这个问题简单的做法就是建个字典，找到出现一次的数，时间复杂度是o（n），但空间复杂度也是O(n),但空间复杂度怎么从O(n)降到O(1)呢？自己木有想到，看了discuss才找到怎么做，利用位运算，取^(异或)。</p>
+<p>这个我用python写的了，用了字典，空间复杂度高</p>
+<pre><code><span class="function"><span class="keyword">def</span> <span class="title">singleNumber</span><span class="params">(self, A)</span>:</span>
+    b = {}
+    <span class="keyword">for</span> item <span class="keyword">in</span> A:
+        <span class="keyword">if</span> item <span class="keyword">not</span> <span class="keyword">in</span> b:
+            b.setdefault(item, <span class="number">1</span>)
+        <span class="keyword">else</span>:
+            b[item] += <span class="number">1</span>
+    <span class="keyword">for</span> item <span class="keyword">in</span> b:
+        <span class="keyword">if</span> b[item] == <span class="number">1</span>:
+            <span class="keyword">return</span> item
+</code></pre><p>这是discuss里面的网友提出来的，相当漂亮，用了异或，相等的两个数异或为0，留下的那个就是single number了</p>
+<pre><code><span class="keyword">int</span> num=<span class="number">0</span>;
+<span class="keyword">for</span>(<span class="keyword">int</span> x : A) num ^= x;
+<span class="keyword">return</span> num;
+</code></pre><p>当然这个问题还有一个进阶版啦，就是<a href="http://oj.leetcode.com/problems/single-number-ii/" target="_blank" rel="external">Single Number II </a>，原来的两个数变成了三个数，当让O(1)的空间复杂性的算法我还没懂，如果懂了立刻贴过来。</p>
+<p><strong><a href="http://oj.leetcode.com/problems/two-sum/" target="_blank" rel="external">Two Sum</a></strong></p>
+<p>这个问题在面阿里实习生的时候被问过，想出了nLog(n)的算法，当然，被面试官教育了o(n)的算法，不过空间换时间嘛，精髓就是hash了，当然这个问题还可以扩展，比如题目中每个数不止出现一次，于是我把value改成了list，如果这里面的数很多很多，hash都不够了该咋办。</p>
+<p>呃，只有我那个nLog(n)的算法，大概是先排序，然后首尾变量，移动。在编程之美2.12中也是有这个问题的，同时也是有各种进阶版，我会在想一下进阶版的问题，分享出来。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2014-03-06T14:12:55.000Z"><a href="/2014/03/06/ref-and-out-in-csharp/">3月 6 2014</a></time>
       
       
@@ -272,46 +331,13 @@ class <span class="type">TestApp</span>
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-02-22T06:18:57.000Z"><a href="/2014/02/22/the-first-blood/">2月 22 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/02/22/the-first-blood/">the first blood</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>这是写在github上的第一篇了，是不是要文艺一把，比如北京的天气已经阴霾的有些日子了；高宇昊大学弟已经从宿舍撤了；宿舍昨天停了电，我机制的买了6m的插线板，完成了“东电西输”；还有我床头放在<a href="http://book.douban.com/subject/3813669/" target="_blank" rel="external">民主的细节</a>、<a href="http://book.douban.com/subject/1858410/" target="_blank" rel="external">万历十五年</a>、<a href="http://book.douban.com/subject/24876477/" target="_blank" rel="external">一个：很高兴见到你</a>和<a href="http://book.douban.com/subject/25747921/" target="_blank" rel="external">从你的全世界路过</a>,但愿这个学期都可以读完。→_→，继续开始伪文青的装逼之路。</p>
-<p>可以预见的是这个博客应该会鲜有人来吧，不过也好，在社交网络（知乎、微博、空间）大（zhuang）述（B）己（mai）见（meng）时间一长就累了。也许在这儿能说些心里话，顺便贴贴代码，算是技术贴了。</p>
-<p>差不多第一篇就这样吧~晚安北京</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
     <a href="/page/2/" class="alignleft prev">上一页</a>
   
+  
+    <a href="/page/4/" class="alignright next">下一页</a>
   
   <div class="clearfix"></div>
 </nav></div></div>
