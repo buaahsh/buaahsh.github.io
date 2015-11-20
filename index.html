@@ -50,6 +50,58 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-11-20T04:43:43.000Z"><a href="/2015/11/20/20151120/">11月 20 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/11/20/20151120/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>title: “20151120”<br>date: 2015-11-20 12:43:43</p>
+<h2 id="tags:[leetcode,_code,_kb]">tags:[leetcode, code, kb]</h2>
+<p>昨天挖的坑，今天来填吧。</p>
+<p>填之前我想先说一下leetcode吧，这周开始，我们宿舍的leetcode的活动是每天两道array的题目，感觉还是有难度的。<br>尤其是有些hard或者比较难的medium，但大家做的情况都还不错。周五了确实可以总结一下这几个题目。<br>对于已经排好序的数组，二分是优先考虑的方法，其复杂度也是nlog(n)，对于无序的数组，可以考虑o(n)的复杂度<br>一次遍历或者有限次遍历。还有一个小的感受是，有<a href="https://leetcode.com/problems/first-missing-positive/" target="_blank" rel="external">一道题</a>是要求constant space,开始想了一段时间，还是感觉常数空间解决不了。<br>后来茅塞顿开，其实是可以利用他的输入，他的输入是一个list，可以在list上做操作，完成常数空间要求。这种变通很好。</p>
+<p>其他能想到的就没有了，开始填坑吧。上次说到了有<a href="http://www.kuqin.com/shuoit/20150923/348229.html" target="_blank" rel="external">软件重构</a><br>我仔细看了这篇博文，里面的东西并没有很复杂或者很多。软件重构就是保证外部行为的不变，对内部结构进行改变，易于理解。<br>软件重构使用一个行为或者动作。我觉得是可以在写到代码的时候来想想那些东西可以进行改变。不是写完再去重构，而是写了不需要重构。</p>
+<ol>
+<li><strong>违反基本的代码规范</strong>，包括命名格式，详细注释等</li>
+<li><strong>重复的代码</strong>，这个倒是可以在写代码的时候注意起来，当腻copy一段代码到另一个地方的时候，就应该想到，能不能用公共静态方法，能不能用重载等。。</li>
+<li><strong>冗长的子程序</strong>，在云知声的时候。任总就说过这个问题，一个函数实现功能不能太多，尽量不要超过一个屏幕。如果太长就需要进行拆分。</li>
+<li><strong>循环过长嵌套过多</strong></li>
+<li><strong>面向对象的编程</strong>，包括使用接口的方式，控制成员变量的访问权限，在构造类的构造方法时，不要花费过多的成本。</li>
+</ol>
+<p>我觉得这些点子不是高大上的说教而是在平时写代码的时候真的可以注意的地方。在这些地方花点功夫也是极有必要的。</p>
+<p>第二个就要填<a href="http://www.cipsc.org.cn/kg3/" target="_blank" rel="external">第三届中文知识图谱研讨会</a>。</p>
+<p>知道这个研讨会，是在13年的时候要在云知声真正参与做知识图谱的时候survey发现的。<br>当时还极其细致的survey了Google的Freebase，当时是要做视频或者娱乐领域的专业知识图谱，在这个基础上完成一个general的中文知识图谱，<br>想法很好，当时也确实调研了，在第一届大会里面看了各家的slide，说实话感觉当时大学、研究所里面的知识图谱，不仅没有商用而且不是很完善，当时感觉中文知识图谱正在做出来有用到的就是搜狗和百度，<br>算是当时中文搜索的技术最扎实的两家公司吧。</p>
+<p>再看他们是如何做到的呢，我觉得freebase起到了关键的作用，freebase是根据wiki的半结构数据抽到的结构数据。百度有百科，同样也可以做这件事，<br>我的感觉是<strong>中文的freebase+专业领域结构化+百科的结构化</strong>得到了一个开放领域的知识图谱，我觉得前两者的贡献更大。百科的结构化和freebase有冲突，可以相互补充。而专业领域结构化是从豆瓣、时光网、娱乐网站等，<br>直接抽取结构化的数据，从多个源头抽取，交叉验证，可以得到准确率较高的结构数据。</p>
+<p>去了亚院知道了satori，但同时一个新的问题又产生了，有个知识图谱怎么用，到底用在什么地方，之前还在知乎跟上一个要做知识图谱的是创业公司的CEO讨论过这个问题。<br>之所以有了这个困惑，是现在能看到的知识图谱真正用到产品的地方并不多，百度搜狗的那些噱头，在真正页面也并不多见。现在比较明确或者直观的应用是在搜素界面的相关人物的推荐，这个人的相关信息。再就是KBQA了。对，还有entity linking到底怎么用，我觉得以后还可以再讲。。（又挖坑了。。）</p>
+<hr>
+<p>上面那些话是我没看第三届的slide一些牢骚，大概浏览完之后，有了一些新的感受，可能领域的知识图谱还是很有效的。<br>不管是创业公司在做金融、公司层面的还是浙大在做医疗还是财经方面的知识图谱，大家反而是都在做特定领域内的知识图谱，一方面是如果构建，另一个方面是如何应用。可以挖个小坑，找一两个例子仔细讲讲。</p>
+<p>好了，再挖几个坑。。我就是这么爱挖坑。。。<a href="http://blog.csdn.net/jdbc/article/details/49834537#0-tsina-1-68717-397232819ff9a47a7b7e80a40613cfe1" target="_blank" rel="external">LSTM简介以及数学推导(FULL BPTT)</a><br><a href="http://www.mitpressjournals.org/doi/pdf/10.1162/COLI_a_00239" target="_blank" rel="external">http://www.mitpressjournals.org/doi/pdf/10.1162/COLI_a_00239</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-11-19T07:00:08.000Z"><a href="/2015/11/19/20151119/">11月 19 2015</a></time>
       
       
@@ -197,40 +249,6 @@
 <p>这个主要是明白在Python写程序的时候更倾向多进程而不是多线程。具体如何实现，如果要用的时候可以参考这个</p>
 <h3 id="Python_爬虫的工具列表_附Github代码下载链接"><a href="http://www.36dsj.com/archives/36417" target="_blank" rel="external">Python 爬虫的工具列表 附Github代码下载链接</a></h3>
 <p>我只能说这个总结的太全了。。网络、爬虫架构、HTML解析、文本处理、特定格式的处理、自然语言处理、、、</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-09T10:11:48.000Z"><a href="/2015/11/09/20151109/">11月 9 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/09/20151109/">又一个开始</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>距上次写东西已有半年多了。突然想重新写日志，一来觉得每天看到的一些东西需要做一个整理，二来明年要找工作，是不是有个技术主页会好一些。想把这些东西放在另一台电脑上，那个有机械键盘，敲起来带感。鼓捣了半天也没搞定，现在原来的电脑上写吧。</p>
-<p>今天就写这两句话吧，开个头。。唉，能不能在另一个台电脑上搞定。</p>
 
       
     </div>

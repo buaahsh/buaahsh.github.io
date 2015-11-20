@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>H blog</title>
+  <meta name="author" content="H">
+  
+  <meta name="description" content="title: “20151120”date: 2015-11-20 12:43:43
+tags:[leetcode, code, kb]
+昨天挖的坑，今天来填吧。
+填之前我想先说一下leetcode吧，这周开始，我们宿舍的leetcode的活动是每天两道array的题目，感觉还是有难度的。尤其是有些">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="H blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="H blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">H blog</a></h1>
+  <h2><a href="/">HuangShaohan&#39;s Blog</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-11-20T04:43:43.000Z"><a href="/2015/11/20/20151120/">11月 20 2015</a></time>
+      
+      
+  
+    <h1 class="title"></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>title: “20151120”<br>date: 2015-11-20 12:43:43</p>
+<h2 id="tags:[leetcode,_code,_kb]">tags:[leetcode, code, kb]</h2>
+<p>昨天挖的坑，今天来填吧。</p>
+<p>填之前我想先说一下leetcode吧，这周开始，我们宿舍的leetcode的活动是每天两道array的题目，感觉还是有难度的。<br>尤其是有些hard或者比较难的medium，但大家做的情况都还不错。周五了确实可以总结一下这几个题目。<br>对于已经排好序的数组，二分是优先考虑的方法，其复杂度也是nlog(n)，对于无序的数组，可以考虑o(n)的复杂度<br>一次遍历或者有限次遍历。还有一个小的感受是，有<a href="https://leetcode.com/problems/first-missing-positive/" target="_blank" rel="external">一道题</a>是要求constant space,开始想了一段时间，还是感觉常数空间解决不了。<br>后来茅塞顿开，其实是可以利用他的输入，他的输入是一个list，可以在list上做操作，完成常数空间要求。这种变通很好。</p>
+<p>其他能想到的就没有了，开始填坑吧。上次说到了有<a href="http://www.kuqin.com/shuoit/20150923/348229.html" target="_blank" rel="external">软件重构</a><br>我仔细看了这篇博文，里面的东西并没有很复杂或者很多。软件重构就是保证外部行为的不变，对内部结构进行改变，易于理解。<br>软件重构使用一个行为或者动作。我觉得是可以在写到代码的时候来想想那些东西可以进行改变。不是写完再去重构，而是写了不需要重构。</p>
+<ol>
+<li><strong>违反基本的代码规范</strong>，包括命名格式，详细注释等</li>
+<li><strong>重复的代码</strong>，这个倒是可以在写代码的时候注意起来，当腻copy一段代码到另一个地方的时候，就应该想到，能不能用公共静态方法，能不能用重载等。。</li>
+<li><strong>冗长的子程序</strong>，在云知声的时候。任总就说过这个问题，一个函数实现功能不能太多，尽量不要超过一个屏幕。如果太长就需要进行拆分。</li>
+<li><strong>循环过长嵌套过多</strong></li>
+<li><strong>面向对象的编程</strong>，包括使用接口的方式，控制成员变量的访问权限，在构造类的构造方法时，不要花费过多的成本。</li>
+</ol>
+<p>我觉得这些点子不是高大上的说教而是在平时写代码的时候真的可以注意的地方。在这些地方花点功夫也是极有必要的。</p>
+<p>第二个就要填<a href="http://www.cipsc.org.cn/kg3/" target="_blank" rel="external">第三届中文知识图谱研讨会</a>。</p>
+<p>知道这个研讨会，是在13年的时候要在云知声真正参与做知识图谱的时候survey发现的。<br>当时还极其细致的survey了Google的Freebase，当时是要做视频或者娱乐领域的专业知识图谱，在这个基础上完成一个general的中文知识图谱，<br>想法很好，当时也确实调研了，在第一届大会里面看了各家的slide，说实话感觉当时大学、研究所里面的知识图谱，不仅没有商用而且不是很完善，当时感觉中文知识图谱正在做出来有用到的就是搜狗和百度，<br>算是当时中文搜索的技术最扎实的两家公司吧。</p>
+<p>再看他们是如何做到的呢，我觉得freebase起到了关键的作用，freebase是根据wiki的半结构数据抽到的结构数据。百度有百科，同样也可以做这件事，<br>我的感觉是<strong>中文的freebase+专业领域结构化+百科的结构化</strong>得到了一个开放领域的知识图谱，我觉得前两者的贡献更大。百科的结构化和freebase有冲突，可以相互补充。而专业领域结构化是从豆瓣、时光网、娱乐网站等，<br>直接抽取结构化的数据，从多个源头抽取，交叉验证，可以得到准确率较高的结构数据。</p>
+<p>去了亚院知道了satori，但同时一个新的问题又产生了，有个知识图谱怎么用，到底用在什么地方，之前还在知乎跟上一个要做知识图谱的是创业公司的CEO讨论过这个问题。<br>之所以有了这个困惑，是现在能看到的知识图谱真正用到产品的地方并不多，百度搜狗的那些噱头，在真正页面也并不多见。现在比较明确或者直观的应用是在搜素界面的相关人物的推荐，这个人的相关信息。再就是KBQA了。对，还有entity linking到底怎么用，我觉得以后还可以再讲。。（又挖坑了。。）</p>
+<hr>
+<p>上面那些话是我没看第三届的slide一些牢骚，大概浏览完之后，有了一些新的感受，可能领域的知识图谱还是很有效的。<br>不管是创业公司在做金融、公司层面的还是浙大在做医疗还是财经方面的知识图谱，大家反而是都在做特定领域内的知识图谱，一方面是如果构建，另一个方面是如何应用。可以挖个小坑，找一两个例子仔细讲讲。</p>
+<p>好了，再挖几个坑。。我就是这么爱挖坑。。。<a href="http://blog.csdn.net/jdbc/article/details/49834537#0-tsina-1-68717-397232819ff9a47a7b7e80a40613cfe1" target="_blank" rel="external">LSTM简介以及数学推导(FULL BPTT)</a><br><a href="http://www.mitpressjournals.org/doi/pdf/10.1162/COLI_a_00239" target="_blank" rel="external">http://www.mitpressjournals.org/doi/pdf/10.1162/COLI_a_00239</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"buaahsh"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/code/">code</a><small>4</small></li>
+  
+    <li><a href="/categories/life/">life</a><small>8</small></li>
+  
+    <li><a href="/categories/nlp/">nlp</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/algorithm/" style="font-size: 15.00px;">algorithm</a><a href="/tags/c/" style="font-size: 15.00px;">c</a><a href="/tags/c/" style="font-size: 15.00px;">c#</a><a href="/tags/gensim/" style="font-size: 15.00px;">gensim</a><a href="/tags/python/" style="font-size: 15.00px;">python</a><a href="/tags/信息检索/" style="font-size: 15.00px;">信息检索</a><a href="/tags/生活/" style="font-size: 20.00px;">生活</a><a href="/tags/自然语言处理/" style="font-size: 15.00px;">自然语言处理</a><a href="/tags/����/" style="font-size: 10.00px;">����</a>
+  </div>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>HuangShaohan</li>
+<li>Pseudo-WenQing & Fan.</li>
+<li>Maybe a programmer with python,java,etc.</li>
+<li>nlp. machine learning. data mining.</li>
+</ul>
+</div>
+
+  <div class="widget tag">
+<h3 class="title">基友情深</h3>
+<ul class="entry">
+<li><a href="http://liusongtao.tk/" title="文青刘大局的部落格" target="_blank">文青刘大局的部落格</a></li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 H
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
