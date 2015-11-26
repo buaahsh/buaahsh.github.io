@@ -50,6 +50,90 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2014-02-24T13:04:00.000Z"><a href="/2014/02/24/2-24-c-algorithm/">2月 24 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/02/24/2-24-c-algorithm/">2-24-c-algorithm</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>帖一些C语言的代码吧，一些基础的，较为简单的代码，没事的时候可以复习一下， 一直说这学期还是刷<a href="http://poj.org" target="_blank" rel="external">JudgeOnline</a> 还是没做到啊，等节奏定下来就开始，一共三千多道题，真心爽。。。</p>
+<p>还是先搞点简单的吧。</p>
+<p>快排,核心思想就是每次找到一个元素的合适位置，同时保证前面的元素都小于他，后面的元素都大于他。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span>
+
+
+<span class="keyword">int</span> findSeat(<span class="keyword">int</span> l[],<span class="keyword">int</span> low,<span class="keyword">int</span> high)
+{
+    <span class="keyword">int</span> prvotkey=l[low];
+    <span class="keyword">int</span> temp;
+    temp=l[low];
+    <span class="keyword">while</span> (low&lt;high)
+    {
+        <span class="keyword">while</span> (low&lt;high&amp;&amp;l[high]&gt;=prvotkey)
+            --high;
+        l[low]=l[high];
+        <span class="keyword">while</span> (low&lt;high&amp;&amp;l[low]&lt;=prvotkey)
+            ++low;
+        l[high]=l[low];
+    }
+    l[low]=temp;
+    <span class="keyword">return</span> low;
+}
+<span class="keyword">void</span> qsort(<span class="keyword">int</span> l[],<span class="keyword">int</span> low,<span class="keyword">int</span> high)
+{
+    <span class="keyword">int</span> prvotloc;
+    <span class="keyword">if</span>(low&lt;high)
+    {
+        prvotloc=findSeat(l,low,high);    <span class="comment">//将第一次排序的结果作为枢轴</span>
+        qsort(l,low,prvotloc-<span class="number">1</span>); <span class="comment">//递归调用排序 由low 到prvotloc-1</span>
+        qsort(l,prvotloc+<span class="number">1</span>,high); <span class="comment">//递归调用排序 由 prvotloc+1到 high</span>
+    }
+}
+
+<span class="keyword">void</span> quicksort(<span class="keyword">int</span> l[],<span class="keyword">int</span> n)
+{
+    qsort(l,<span class="number">1</span>,n); <span class="comment">//第一个作为枢轴 ，从第一个排到第n个</span>
+}
+<span class="keyword">void</span> main()
+{
+  <span class="keyword">int</span> a[<span class="number">200</span>],n,i;
+  <span class="built_in">printf</span>(<span class="string">"n="</span>);
+  <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);
+  <span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)
+    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);
+  quicksort(a,n);
+  <span class="built_in">printf</span>(<span class="string">"right number:"</span>);
+  <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)
+    <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);
+  <span class="built_in">printf</span>(<span class="string">"\n"</span>);
+}
+</code></pre><p>排序大概就一个快排吧，冒泡、选择就算了。接下来是些字符串处理的吧。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2014-02-24T01:47:59.000Z"><a href="/2014/02/24/some-algorithms-about-nlp/">2月 24 2014</a></time>
       
       
@@ -150,7 +234,7 @@
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/algorithm/" style="font-size: 15.00px;">algorithm</a><a href="/tags/c/" style="font-size: 15.00px;">c</a><a href="/tags/c/" style="font-size: 15.00px;">c#</a><a href="/tags/gensim/" style="font-size: 15.00px;">gensim</a><a href="/tags/python/" style="font-size: 15.00px;">python</a><a href="/tags/信息检索/" style="font-size: 15.00px;">信息检索</a><a href="/tags/生活/" style="font-size: 20.00px;">生活</a><a href="/tags/自然语言处理/" style="font-size: 15.00px;">自然语言处理</a><a href="/tags/����/" style="font-size: 10.00px;">����</a>
+    <a href="/tags/algorithm/" style="font-size: 15.00px;">algorithm</a><a href="/tags/c/" style="font-size: 15.00px;">c</a><a href="/tags/c/" style="font-size: 15.00px;">c#</a><a href="/tags/code/" style="font-size: 15.00px;">code</a><a href="/tags/gensim/" style="font-size: 15.00px;">gensim</a><a href="/tags/kb/" style="font-size: 15.00px;">kb</a><a href="/tags/leetcode/" style="font-size: 15.00px;">leetcode</a><a href="/tags/python/" style="font-size: 15.00px;">python</a><a href="/tags/信息检索/" style="font-size: 15.00px;">信息检索</a><a href="/tags/生活/" style="font-size: 20.00px;">生活</a><a href="/tags/自然语言处理/" style="font-size: 15.00px;">自然语言处理</a><a href="/tags/����/" style="font-size: 10.00px;">����</a>
   </div>
 </div>
 

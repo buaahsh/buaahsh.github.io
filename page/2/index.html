@@ -50,6 +50,54 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-11-11T08:49:32.000Z"><a href="/2015/11/11/20151111/">11月 11 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/11/11/20151111/">1111</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>双十一、、、剁手啊</p>
+<h3 id="Python_integer_objects_implementation"><a href="http://www.laurentluce.com/posts/python-integer-objects-implementation/" target="_blank" rel="external">Python integer objects implementation</a></h3>
+<p>讲的是Python整数对象的实现，来看一个语言是怎么设计的，我觉得可以学到的有两点吧。</p>
+<ol>
+<li><p>When a block of integer objects is allocated by Python, the objects have no value assigned to them yet. We call them free integer objects ready to be used. A value will be assigned to the next free object when a new integer value is used in your program. No memory allocation will be required when a free integer object’s value is set so it will be fast.<br>Python 在整数使用前申请一些整数对象的内存， 在给整数对象分配内存块时，直接赋给空闲的整数对象。来提高速度</p>
+</li>
+<li><p>A specific structure is used to refer small integers and share them so access is fast. It is an array of 262 pointers to integer objects. Those integer objects are allocated during initialization in a block of integer objects we saw above. The small integers range is from -5 to 256. Many Python programs spend a lot of time using integers in that range so this is a smart decision.<br>Python做的第二点是提前为一部分小整数分配了空间，以便快速访问</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a = <span class="number">256</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>b = <span class="number">256</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</div><div class="line"><span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="number">2.</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a = <span class="number">257</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>b = <span class="number">257</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</div><div class="line"><span class="keyword">False</span></div><div class="line"></div><div class="line"><span class="number">3.</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a, b = <span class="number">257</span>, <span class="number">257</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</div><div class="line"><span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="number">4.</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a = <span class="number">257</span>; b = <span class="number">257</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</div><div class="line"><span class="keyword">False</span></div></pre></td></tr></table></figure>
+
+<p>还有一个讲<a href="http://www.cnblogs.com/fengliucaizi/p/4940380.html" target="_blank" rel="external">Python 内存管理</a>的，先挖个坑吧，等有时间再看。 再填一个小坑，之前研究生数学建模里面有个题是做分类的，针对流型，今天看到scikit-learn就有专门干这个的 <a href="http://scikit-learn.org/dev/modules/manifold.html" target="_blank" rel="external">Manifold Learning</a>，这个也用不到，mark一下吧</p>
+<h3 id="multiprocessing"><a href="http://www.cnblogs.com/kaituorensheng/p/4445418.html" target="_blank" rel="external">multiprocessing</a></h3>
+<p>这个主要是明白在Python写程序的时候更倾向多进程而不是多线程。具体如何实现，如果要用的时候可以参考这个</p>
+<h3 id="Python_爬虫的工具列表_附Github代码下载链接"><a href="http://www.36dsj.com/archives/36417" target="_blank" rel="external">Python 爬虫的工具列表 附Github代码下载链接</a></h3>
+<p>我只能说这个总结的太全了。。网络、爬虫架构、HTML解析、文本处理、特定格式的处理、自然语言处理、、、</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-11-09T10:11:48.000Z"><a href="/2015/11/09/20151109/">11月 9 2015</a></time>
       
       
@@ -189,60 +237,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-11-12T14:47:35.000Z"><a href="/2014/11/12/algoda-1/">11月 12 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/11/12/algoda-1/">AlgoDA-1</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>Divide and Conquer - 分治</p>
-<p>把原始问题分解为若干子问题，在逐个解决各个子问题的基础上，得到原始问题的解。 经常和递归联系在一起。因此如果计算时间复杂度，其递推公式很重要。</p>
-<h2 id="几个常见的使用分治的问题">几个常见的使用分治的问题</h2>
-<ul>
-<li>FindMaxMin</li>
-</ul>
-<p>n个整数元素的数组A[1… n], n 为2的幂， 传统算法的比较次数为2n-2，采用分治得到的公式为 C(n) = 1 n=2； C(n) = 2C(n/2)+2 n &gt; 2 根据递推公式可以得到其比较的次数为 3/2n-2，相对传统算法得到了提升。</p>
-<ul>
-<li>二分查找</li>
-</ul>
-<p>在已经排序的数组上进行二分查找，其时间复杂度了log(n)。其递推公式为(n) = 1 n=1 ； C(n) = C(n/2)+1 n&gt;1</p>
-<ul>
-<li>合并排序</li>
-</ul>
-<p>思路很简单，将待排序数组对半分成两个子数组；分别对两个子数组排序；将两个已排序的子数组合并。给出最大笔记次数和最小比较次数的递推公式。<br> C(n) = 0 n=1 ；C(n) = 2C(n/2)+n-1 n&gt;1 ||  C(n) = 0 n=1 ; C(n) = 2C(n/2)+n/2 n&gt;1</p>
-<ul>
-<li><p>寻找第K小的元素</p>
-<p>比较朴素的做法有，直接查找，找到第1小，然后找第2小。。一直到第k小，时间复杂度应该是 kn，如果k接近 n/2，那么复杂度为 n*n/2.第二种比较朴素的做法进行排序，nlog(n)的复杂度。在分治的算法中有一个办法，比较复杂，就直接贴算法的照片了。</p>
-<p>除了分治之外，还有减治和变治</p>
-<p>减治：每次算法迭代总是从实例规模中减去一个规模相同的常量。经常地，这个常量等于一。</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -280,7 +274,7 @@
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/algorithm/" style="font-size: 15.00px;">algorithm</a><a href="/tags/c/" style="font-size: 15.00px;">c</a><a href="/tags/c/" style="font-size: 15.00px;">c#</a><a href="/tags/gensim/" style="font-size: 15.00px;">gensim</a><a href="/tags/python/" style="font-size: 15.00px;">python</a><a href="/tags/信息检索/" style="font-size: 15.00px;">信息检索</a><a href="/tags/生活/" style="font-size: 20.00px;">生活</a><a href="/tags/自然语言处理/" style="font-size: 15.00px;">自然语言处理</a><a href="/tags/����/" style="font-size: 10.00px;">����</a>
+    <a href="/tags/algorithm/" style="font-size: 15.00px;">algorithm</a><a href="/tags/c/" style="font-size: 15.00px;">c</a><a href="/tags/c/" style="font-size: 15.00px;">c#</a><a href="/tags/code/" style="font-size: 15.00px;">code</a><a href="/tags/gensim/" style="font-size: 15.00px;">gensim</a><a href="/tags/kb/" style="font-size: 15.00px;">kb</a><a href="/tags/leetcode/" style="font-size: 15.00px;">leetcode</a><a href="/tags/python/" style="font-size: 15.00px;">python</a><a href="/tags/信息检索/" style="font-size: 15.00px;">信息检索</a><a href="/tags/生活/" style="font-size: 20.00px;">生活</a><a href="/tags/自然语言处理/" style="font-size: 15.00px;">自然语言处理</a><a href="/tags/����/" style="font-size: 10.00px;">����</a>
   </div>
 </div>
 
