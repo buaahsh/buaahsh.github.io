@@ -50,6 +50,45 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-11-13T05:25:08.000Z"><a href="/2015/11/13/20151113/">11月 13 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/11/13/20151113/">20151113</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>今天先说一些看到的跟Python有关的tips吧， <a href="http://hyan.in/python/python-experience/" target="_blank" rel="external">一点Python的经验</a>。我没有仔细了解<br>博主是做Python什么开发，应该跟web有关。这里面就讲了一些他在工作中一个Python的小总结，很简单，也比较实用，<br>可能不仅仅是Python，其他的一些工程也是可以学习的。</p>
+<p>首先他讲到返回值，返回值不一致的问题。项目比较大之后，有返回dict，有返回object的，导致调用起来很乱。<br>博主想了一个很简单的办法，在上层封装一下，提供一个统一的逻辑判断。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fail</span><span class="params">(msg, err_code=error.ERR_DATA_NOT_EXIST)</span>:</span></div><div class="line">    <span class="keyword">return</span> {</div><div class="line">        <span class="string">'suc'</span>: <span class="keyword">False</span>,</div><div class="line">        <span class="string">'errmsg'</span>: msg,</div><div class="line">        <span class="string">'code'</span>: err_code</div><div class="line">    }</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">suc</span><span class="params">(data=None)</span>:</span></div><div class="line">    <span class="keyword">return</span> {</div><div class="line">        <span class="string">'suc'</span>: <span class="keyword">True</span>,</div><div class="line">        <span class="string">'data'</span>: data</div><div class="line">    }</div></pre></td></tr></table></figure>
+
+<p>确实这种统一的封装很有必要，虽然简单但很实用。</p>
+<p>处理返回值的统一，作者还提到一点我觉得可以借鉴的是，日志打印方式的统一。这个在之前的开发中是注意不到的，<br>而且这个日志格式也是看作一个习惯，不管什么日志都有一个统一的风格，保持这样的连贯性对开发也是有好处。</p>
+<p>大概说这么多吧，接下来可能要尝试一下，multi-classification of network anomaly, 在考虑用bi-direction rnn<br>应该会用Python在做这件事。倒是可以学一下theano。不过现在还在build dataset。。<br>现在第一件事儿就是把mawi的tcpdump文件 aggressive 为flow文件吧</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-11-11T08:49:32.000Z"><a href="/2015/11/11/20151111/">11月 11 2015</a></time>
       
       
@@ -185,42 +224,6 @@
 <p>也许不止是写东西，包括读东西，当然专业的书籍还是不时的看一看，但“文艺”的书好像跟我就无缘了。前两天，在CJJ意外看到一本东野奎吾的<a href="http://book.douban.com/subject/25862578/" target="_blank" rel="external">《解忧杂货店》</a>,随手翻一翻本以为是本推理小说，却在扉页告诉我，这不是一本推理小说却胜似一本推理小说。可能东野奎吾那句话是最好的概述：“如今回顾写作过程，我发现自己始终在思考一个问题：站在人生的岔路口，人究竟应该怎么做？我希望读者能在掩卷时喃喃自语：我从未读过这样的小说。”站在人生的岔路口，我该如何选择。。。</p>
 <p>很长一段时间了，先自己长时间维护一个自然语言处理有个的项目，也是前前后后想了很久，断断续续试过Alice、藏头诗啥的，也想过做一套中文的knowledge graph，这就像一个点，可以是个偏技术的点，可以偏工程，应该打算慢慢做，还是想做一个有点意思的，偏技术一点的东西。就像做SA，或者说做IR，真正想要做好就得一个一个case的debug，只有这样才有一点点的提高，而不是一个方法，一个方法的去试，这种方法可以试得快，但真正提高结果还是一个苦活，累活。</p>
 <p>新的一年了，人总要立一些计划，就像去年还信誓旦旦的立了一个又一个目标，现在看看硬指标一个都没有做到，那样怎么样呢。Just so so。。。有这样的豁达，才能开开心心开始新一年的计划。具体的新年计划还需要再想想，但决定还是好好看看aiml，用aiml做一个中文的chatbot。相对于藏头诗自动生成，这个至少大众一些，相对SA，Summary这个显得更有意思，不需要考虑Evaluation，也不需要做的太学术。相对于knowledge base，KB更多的是做mining，而mining一来是比较低端，而且KB重要的质量，准确性，即便做到这些，KB怎么用也是一个问题，做QA还是Entity Linking，这一个个的都是坑啊。所以想过来想过去，还是做chatbot，然后还是用aiml，还有点意思，如果做EQnA或者Web QA一方面还是要做mining，现在自己来干这种苦活，还不如写点中文的aiml脚本有意思。就这么愉快的决定了~~奔跑吧，骚年~</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-11-28T07:40:02.000Z"><a href="/2014/11/28/aboutdream20141128/">11月 28 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/11/28/aboutdream20141128/">人要有梦想，万一实现了呢</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>拿老马的这句话套在这里应该是没有什么问题的。最近比较忙，没时间写，现在可以利用组会聊一聊这个了。</p>
-<p>先从老马讲起吧，抛开高考、教师乱七八糟的经历，从99年十八罗汉在住宅里开始电子商务开始，浮浮沉沉，从亚马逊，卓越，当当到京东，拍拍，易迅。几易身边的对手最后终于走到了纳斯达克的交易所。有人靠技术驱动，有人靠产品立足，在讲到阿里的时候则是谈到了生态。。那再抽象一些呢，是不是可以用“人要有梦想，万一实现了呢”来做总结呢。</p>
-<p>QQ让交流与沟通走到了线上，淘宝，京东让线下的购物转到了线上。搜狐，网易完成了在互联网的媒体功能。百度，谷歌做到的是从互联网中获取信息。衣食住行，教育医疗，金融，交友，种种这些都可以看作互联网作为新兴行业，新型模式对旧势力，旧模式的洗牌与冲击。所谓敢为人先应该是怀着这种梦想去做，万一实现了呢。</p>
-<p>自然语言处理的三个硬需求：搜索、词典(翻译)和输入法。主要谈谈搜索吧，谷歌、百度起家的东西。</p>
 
       
     </div>

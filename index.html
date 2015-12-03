@@ -50,6 +50,40 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-12-03T13:13:40.000Z"><a href="/2015/12/03/20151203/">12月 3 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/12/03/20151203/">20151203</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>今天闲扯一段吧，晚上请舍友吃了饭，中间喝了点酒，然后又滚回了实验室。开题要的材料准备的差不多了，可以还需要再修修补补，今天看到了(www.hankcs.com)[www.hankcs.com]觉得好惭愧。上外的一个女生，不是计算机学院，凭自己的兴趣爱好，搞自然语言处理。知道这个也是看到她公开的HanLP,java写的。效果没有细看，但确实是做了很多东西，中文分词、词性标注、命名实体识别、关键词抽取、自动摘要、短语提取、拼音转换、繁简转换还有依存句法分析。真的，看完好羞愧啊，我自己在做什么。身边能看到这样的人是幸福的，看到同龄人的天花板，看到比自己优秀的人，真正的去学习，可能才是最有意义的。想想之前想做Python的中文nlp的tool，没做；想做中文的pyaiml，没做。。呵呵。呵呵</p>
+<p>呵呵</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-11-26T05:53:10.000Z"><a href="/2015/11/26/20151126/">11月 26 2015</a></time>
       
       
@@ -219,45 +253,6 @@
 <p>Zhang, Y., &amp; Wallace, B. (2015). A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification.</p>
 <p><img src="http://img.ptcms.csdn.net/article/201511/11/5643478f17026_middle.jpg?_=53946" alt=""></p>
 <p>就说这么多吧，明天开始要按照类别刷leetcode了，这个每天也可以写写。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-13T05:25:08.000Z"><a href="/2015/11/13/20151113/">11月 13 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/13/20151113/">20151113</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>今天先说一些看到的跟Python有关的tips吧， <a href="http://hyan.in/python/python-experience/" target="_blank" rel="external">一点Python的经验</a>。我没有仔细了解<br>博主是做Python什么开发，应该跟web有关。这里面就讲了一些他在工作中一个Python的小总结，很简单，也比较实用，<br>可能不仅仅是Python，其他的一些工程也是可以学习的。</p>
-<p>首先他讲到返回值，返回值不一致的问题。项目比较大之后，有返回dict，有返回object的，导致调用起来很乱。<br>博主想了一个很简单的办法，在上层封装一下，提供一个统一的逻辑判断。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fail</span><span class="params">(msg, err_code=error.ERR_DATA_NOT_EXIST)</span>:</span></div><div class="line">    <span class="keyword">return</span> {</div><div class="line">        <span class="string">'suc'</span>: <span class="keyword">False</span>,</div><div class="line">        <span class="string">'errmsg'</span>: msg,</div><div class="line">        <span class="string">'code'</span>: err_code</div><div class="line">    }</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">suc</span><span class="params">(data=None)</span>:</span></div><div class="line">    <span class="keyword">return</span> {</div><div class="line">        <span class="string">'suc'</span>: <span class="keyword">True</span>,</div><div class="line">        <span class="string">'data'</span>: data</div><div class="line">    }</div></pre></td></tr></table></figure>
-
-<p>确实这种统一的封装很有必要，虽然简单但很实用。</p>
-<p>处理返回值的统一，作者还提到一点我觉得可以借鉴的是，日志打印方式的统一。这个在之前的开发中是注意不到的，<br>而且这个日志格式也是看作一个习惯，不管什么日志都有一个统一的风格，保持这样的连贯性对开发也是有好处。</p>
-<p>大概说这么多吧，接下来可能要尝试一下，multi-classification of network anomaly, 在考虑用bi-direction rnn<br>应该会用Python在做这件事。倒是可以学一下theano。不过现在还在build dataset。。<br>现在第一件事儿就是把mawi的tcpdump文件 aggressive 为flow文件吧</p>
 
       
     </div>
