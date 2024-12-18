@@ -27,6 +27,53 @@
         font-size: 3.5rem;
       }
     }
+
+    .tag {
+      color: #000000;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 12px;
+      margin-left: 4px;
+    }
+
+    .blue {
+      background-color: #2196F3;
+      /* 蓝色背景 */
+    }
+
+    .red {
+      background-color: #F44336;
+      /* 红色背景 */
+    }
+
+    .green {
+      background-color: #4CAF50;
+      /* 绿色背景 */
+    }
+
+    .orange {
+      background-color: #FF9800;
+      /* 橙色背景 */
+    }
+
+    .purple {
+      background-color: #9C27B0;
+      /* 紫色背景 */
+    }
+
+    .yellow {
+      background-color: #FFEB3B;
+      /* 黄色背景 */
+    }
+    .lightgreen {
+      background-color: #8BC34A;
+    }
+    .gray {
+      background-color: #9E9E9E;
+    }
+    .pink {
+      background-color: #E91E63;
+    }
   </style>
   <!-- Custom styles for this template -->
   <link href="res/pricing.css" rel="stylesheet">
@@ -70,20 +117,152 @@
       <h3>News</h3>
       <ul>
         <li>December 2023: one papers accepted by AAAI 2024.</li>
-        <li>October 2023: two papers (<a href="https://arxiv.org/pdf/2303.08518.pdf" target="_blank">Uprise: Universal Prompt Retrieval</a>) accepted by EMNLP 2023.</li>
+        <li>October 2023: two papers (<a href="https://arxiv.org/pdf/2303.08518.pdf" target="_blank">Uprise: Universal
+            Prompt Retrieval</a>) accepted by EMNLP 2023.</li>
         <li>February 2023: four papers accepted by ACL 2023.</li>
         <li>October 2022: three papers accepted by EMNLP 2022.</li>
         <li>February 2022: two papers accepted by ACL 2022.</li>
         <li>February 2022: one paper accepted by ICASSP 2022.</li>
         <li>2021: two papers accepted by EMNLP 2021.</li>
-        <li>September 28th, 2021: T-ULRv5 (aka <a href="https://arxiv.org/abs/2106.16138" target="_blank">XLM-E</a>/<a href="https://arxiv.org/abs/2007.07834" target="_blank">InfoXLM</a>) tops on the <a href="https://sites.research.google/xtreme" target="_blank">XTREME</a> leaderboard. // <a href="https://www.microsoft.com/en-us/research/blog/microsoft-turing-universal-language-representation-model-t-ulrv5-tops-xtreme-leaderboard-and-trains-100x-faster/" target="_blank">Blog</a> | <a href="https://github.com/microsoft/unilm" target="_blank">repo</a></li>
-        <li>May 2021: four papers (including <a href="https://github.com/microsoft/unilm/tree/master/adalm" target="_blank">AdaLM</a>) accepted by ACL 2021.</li>
+        <li>September 28th, 2021: T-ULRv5 (aka <a href="https://arxiv.org/abs/2106.16138" target="_blank">XLM-E</a>/<a
+            href="https://arxiv.org/abs/2007.07834" target="_blank">InfoXLM</a>) tops on the <a
+            href="https://sites.research.google/xtreme" target="_blank">XTREME</a> leaderboard. // <a
+            href="https://www.microsoft.com/en-us/research/blog/microsoft-turing-universal-language-representation-model-t-ulrv5-tops-xtreme-leaderboard-and-trains-100x-faster/"
+            target="_blank">Blog</a> | <a href="https://github.com/microsoft/unilm" target="_blank">repo</a></li>
+        <li>May 2021: four papers (including <a href="https://github.com/microsoft/unilm/tree/master/adalm"
+            target="_blank">AdaLM</a>) accepted by ACL 2021.</li>
       </ul>
     </div>
     <div id="publication">
-      <h3>Publications </h3>
-      <a href="https://scholar.google.com/citations?user=w_QWEo8AAAAJ&hl=en" target="_blank">Google Scholar</a>
-      <script src="https://bibbase.org/show?bib=https://dblp.org/pid/176/0380.bib&jsonp=1"></script>
+      <h3>Selected Publications</h3>
+      <a href="https://scholar.google.com/citations?user=w_QWEo8AAAAJ&hl=en" target="_blank">Google Scholar</a> | #:
+      students I mentored
+      <p>
+        <span class="tag green">MLLM</span> | <span class="tag yellow">LLM</span> | <span class="tag blue">Model
+          Architecture</span> | <span class="tag red">Text Generation</span> | <span class="tag orange">Retrieval & Embedding</span> | <span class="tag purple">Domain Adaption</span> | <span class="tag lightgreen">Multilingual</span> | <span class="tag gray">MoE</span>
+      </p>
+      <!-- <script src="https://bibbase.org/show?bib=https://dblp.org/pid/176/0380.bib&jsonp=1"></script> -->
+      <ul>
+        <li><a href="https://doi.org/10.1109/TPAMI.2024.3386927" target="_blank">DeepNet: Scaling Transformers to 1,000
+            Layers</a><br>Hongyu Wang, Shuming Ma, Li Dong, <b>Shaohan Huang</b>, Dongdong Zhang, Furu Wei. PAMI 2024.
+          <span class="tag blue">Model Architecture</span></li>
+        <li><a href="https://doi.org/10.1609/aaai.v38i12.29316" target="_blank">Text Diffusion with Reinforced
+            Conditioning</a><br>Yuxuan Liu#, Tianchi Yang, <b>Shaohan Huang</b>, Zihan Zhang, Haizhen Huang, Furu Wei,
+          Weiwei Deng, Feng Sun, Qi Zhang. AAAI 2024.<span class="tag red">Text Generation</span>
+        </li>
+        <li><a href="https://doi.org/10.18653/v1/2024.findings-acl.312" target="_blank">Se2: Sequential Example
+            Selection for In-Context Learning</a><br>Haoyu Liu#, Jianfeng Liu, <b>Shaohan Huang</b>, Yuefeng Zhan, Hao
+          Sun, Weiwei Deng, Furu Wei, Qi Zhang. ACL 2024. <span class="tag orange">Retrieval & Embedding</span> <span
+            class="tag yellow">LLM</span>
+        </li>
+        <li><a href="https://doi.org/10.18653/v1/2024.acl-long.413" target="_blank">HD-Eval: Aligning Large Language
+            Model Evaluators Through Hierarchical
+            Criteria Decomposition</a><br>Yuxuan Liu#, Tianchi Yang, <b>Shaohan Huang</b>, Zihan Zhang, Haizhen Huang,
+          Furu Wei, Weiwei Deng, Feng Sun, Qi Zhang. ACL 2024. <span class="tag yellow">LLM</span></li>
+        <li><a href="https://doi.org/10.18653/v1/2024.findings-acl.525" target="_blank">ResLoRA: Identity Residual
+            Mapping in Low-Rank Adaption</a><br>Shuhua Shi#, <b>Shaohan Huang</b>, Minghui Song, Zhoujun Li, Zihan
+          Zhang, Haizhen Huang, Furu Wei, Weiwei Deng, Feng Sun, Qi Zhang. ACL 2024. <span class="tag yellow">LLM</span>
+        </li>
+        <li><a href="https://aclanthology.org/2024.lrec-main.237" target="_blank">Calibrating LLM-Based
+            Evaluator</a><br>Yuxuan Liu#, Tianchi Yang, <b>Shaohan Huang</b>, Zihan Zhang, Haizhen Huang, Furu Wei,
+          Weiwei Deng, Feng Sun, Qi Zhang. COLING 2024. <span class="tag yellow">LLM</span></li>
+        <li><a href="https://aclanthology.org/2024.emnlp-main.148" target="_blank">Instruction Pre-Training: Language
+            Models are Supervised Multitask
+            Learners</a><br>Daixuan Cheng#, Yuxian Gu, <b>Shaohan Huang</b>, Junyu Bi, Minlie Huang, Furu Wei. EMNLP
+          2024. <span class="tag yellow">LLM</span></li>
+        <li><a href="https://aclanthology.org/2024.findings-emnlp.181" target="_blank">Scaling Sentence Embeddings with
+            Large Language Models</a><br>Ting Jiang#, <b>Shaohan Huang</b>, Zhongzhi Luan, Deqing Wang, Fuzhen Zhuang.
+          EMNLP 2024. <span class="tag yellow">LLM</span> <span class="tag orange">Retrieval & Embedding</span> </li>
+        <li><a href="https://openreview.net/forum?id=y886UXPEZ0" target="_blank">Adapting Large Language Models via
+            Reading Comprehension</a><br>Daixuan Cheng#, <b>Shaohan Huang</b>, Furu Wei. ICLR 2024.<span
+            class="tag purple">Domain Adaption</span></li>
+        <li><a href="https://openreview.net/forum?id=he6mX9LTyE" target="_blank">Kosmos-G: Generating Images in Context
+            with Multimodal Large Language
+            Models</a><br>Xichen Pan, Li Dong, <b>Shaohan Huang</b>, Zhiliang Peng, Wenhu Chen, Furu Wei. ICLR 2024.
+          <span class="tag green">MLLM</span> </li>
+        <li><a href="https://openreview.net/forum?id=lLmqxkfSIw" target="_blank">Grounding Multimodal Large Language
+            Models to the World</a><br>Zhiliang Peng, Wenhui Wang, Li Dong, Yaru Hao, <b>Shaohan Huang</b>, Shuming Ma,
+          Qixiang Ye, Furu Wei. ICLR 2024. <span class="tag green">MLLM</span> </li>
+        <li><a href="https://openreview.net/forum?id=uWvKBCYh4S" target="_blank">Mixture of LoRA Experts</a><br>Xun Wu#,
+          <b>Shaohan Huang</b>, Furu Wei. ICLR 2024. <span class="tag yellow">LLM</span></li>
+        <li><a href="https://doi.org/10.1609/aaai.v37i11.26617" target="_blank">MoEC: Mixture of Expert
+            Clusters</a><br>Yuan Xie#, <b>Shaohan Huang</b>, Tianyu Chen, Furu Wei. AAAI 2023. <span class="tag gray">MoE</span></li>
+        <li><a href="https://doi.org/10.18653/v1/2023.findings-acl.9" target="_blank">Pre-training Language Model as a
+            Multi-perspective Course Learner</a><br>Beiduo Chen#, <b>Shaohan Huang</b>, Zihan Zhang, Wu Guo, Zhenhua
+          Ling, Haizhen Huang, Furu Wei, Weiwei Deng, Qi Zhang. ACL 2023. <span class="tag yellow">LLM</span> </li>
+        <li><a href="https://doi.org/10.18653/v1/2023.acl-long.191" target="_blank">Dual-Alignment Pre-training for
+            Cross-lingual Sentence Embedding</a><br>Ziheng Li#, <b>Shaohan Huang</b>, Zihan Zhang, Zhi{-}Hong Deng, Qiang
+          Lou, Haizhen Huang, Jian Jiao, Furu Wei, Weiwei Deng, Qi Zhang. ACL 2023. <span class="tag orange">Retrieval &
+            Embedding</span> </li>
+        <li><a href="https://doi.org/10.18653/v1/2023.acl-long.856" target="_blank">Beyond English-Centric Bitexts for
+            Better Multilingual Language Representation
+            Learning</a><br>Barun Patra, Saksham Singhal, <b>Shaohan Huang</b>, Zewen Chi, Li Dong, Furu Wei, Vishrav
+          Chaudhary, Xia Song. ACL 2023. <span class="tag lightgreen">Multilingual</span></li>
+        <li><a href="https://doi.org/10.18653/v1/2023.emnlp-main.120" target="_blank">Democratizing Reasoning Ability:
+            Tailored Learning from Large Language
+            Model</a><br>Zhaoyang Wang#, <b>Shaohan Huang</b>, Yuxuan Liu, Jiahai Wang, Minghui Song, Zihan Zhang,
+          Haizhen Huang, Furu Wei, Weiwei Deng, Feng Sun, Qi Zhang. EMNLP 2023. <span class="tag yellow">LLM</span></li>
+        <li><a href="https://doi.org/10.18653/v1/2023.emnlp-main.758" target="_blank">UPRISE: Universal Prompt
+            Retrieval for Improving Zero-Shot Evaluation</a><br>Daixuan Cheng#, <b>Shaohan Huang</b>, Junyu Bi, Yuefeng
+          Zhan, Jianfeng Liu, Yujing Wang, Hao Sun, Furu Wei, Weiwei Deng, Qi Zhang. EMNLP 2023. <span class="tag orange">Retrieval &
+            Embedding</span></li>
+        <li><a href="https://proceedings.mlr.press/v202/wang23u.html" target="_blank">Magneto: A Foundation
+            Transformer</a><br>Hongyu Wang, Shuming Ma, <b>Shaohan Huang</b>, Li Dong, Wenhui Wang, Zhiliang Peng, Yu
+          Wu, Payal Bajaj, Saksham Singhal, Alon Benhaim, Barun Patra, Zhun Liu, Vishrav Chaudhary, Xia Song, Furu Wei.
+          ICML 2023. <span class="tag blue">Model
+            Architecture</span></li>
+        <li><a
+            href="http://papers.nips.cc/paper\_files/paper/2023/hash/e425b75bac5742a008d643826428787c-Abstract-Conference.html"
+            target="_blank">Language Is Not All You Need: Aligning Perception with Language Models</a><br><b>Shaohan
+            Huang</b>, Li Dong, Wenhui Wang, Yaru Hao, Saksham Singhal, Shuming Ma, Tengchao Lv, Lei Cui, Owais Khan
+          Mohammed, Barun Patra, Qiang Liu, Kriti Aggarwal, Zewen Chi, Nils Johan Bertil Bjorck, Vishrav Chaudhary,
+          Subhojit Som, Xia Song, Furu Wei. NIPS 2023. <span class="tag green">MLLM</span></li>
+        <li><a href="https://doi.org/10.18653/v1/2022.findings-acl.277" target="_blank">THE-X: Privacy-Preserving
+            Transformer Inference with Homomorphic
+            Encryption</a><br>Tianyu Chen#, Hangbo Bao, <b>Shaohan Huang</b>, Li Dong, Binxing Jiao, Daxin Jiang, Haoyi
+          Zhou, Jianxin Li, Furu Wei. ACL 2022. <span class="tag pink">Encryption</span></li>
+        <li><a href="https://doi.org/10.18653/v1/2022.acl-long.427" target="_blank">XLM-E: Cross-lingual Language
+            Model Pre-training via ELECTRA</a><br>Zewen Chi, <b>Shaohan Huang</b>, Li Dong, Shuming Ma, Bo Zheng,
+          Saksham Singhal, Payal Bajaj, Xia Song, Xianling Mao, Heyan Huang, Furu Wei. ACL 2022. <span class="tag lightgreen">Multilingual</span> <span class="tag gray">MoE</span></li>
+        <li><a href="https://doi.org/10.18653/v1/2022.findings-emnlp.34" target="_blank">CROP: Zero-shot Cross-lingual
+            Named Entity Recognition with Multilingual
+            Labeled Sequence Translation</a><br>Jian Yang, <b>Shaohan Huang</b>, Shuming Ma, Yuwei Yin, Li Dong,
+          Dongdong Zhang, Hongcheng Guo, Zhoujun Li, Furu Wei. EMNLP 2022. <span class="tag lightgreen">Multilingual</span></li>
+        <li><a href="https://doi.org/10.18653/v1/2022.findings-emnlp.163" target="_blank">Snapshot-Guided Domain
+            Adaptation for ELECTRA</a><br>Daixuan Cheng#, <b>Shaohan Huang</b>, Jianfeng Liu, Yuefeng Zhan, Hao Sun,
+          Furu Wei, Denvy Deng, Qi Zhang. EMNLP 2022. <span class="tag purple">Domain Adaption</span></li>
+        <li><a href="https://doi.org/10.18653/v1/2022.emnlp-main.603" target="_blank">PromptBERT: Improving BERT
+            Sentence Embeddings with Prompts</a><br>Ting Jiang#, Jian Jiao, <b>Shaohan Huang</b>, Zihan Zhang, Deqing
+          Wang, Fuzhen Zhuang, Furu Wei, Haizhen Huang, Denvy Deng, Qi Zhang. EMNLP 2022. <span class="tag orange">Retrieval & Embedding</span></li>
+        <li><a
+            href="http://papers.nips.cc/paper\_files/paper/2022/hash/df4f371f1f89ec8ba5014b3310578048-Abstract-Conference.html"
+            target="_blank">On the Representation Collapse of Sparse Mixture of Experts</a><br>Zewen Chi, Li Dong,
+          <b>Shaohan Huang</b>, Damai Dai, Shuming Ma, Barun Patra, Saksham Singhal, Payal Bajaj, Xia Song, Xianling
+          Mao, Heyan Huang, Furu Wei. NIPS 2022.<span class="tag gray">MoE</span></li>
+        <li><a href="https://doi.org/10.18653/v1/2021.findings-acl.40" target="_blank">Adapt-and-Distill: Developing
+            Small, Fast and Effective Pretrained
+            Language Models for Domains</a><br>Yunzhi Yao#, <b>Shaohan Huang</b>, Wenhui Wang, Li Dong, Furu Wei. ACL
+          2021. <span class="tag purple">Domain Adaption</span></li>
+        <li><a href="https://doi.org/10.18653/v1/2021.acl-long.264" target="_blank">Consistency Regularization for
+            Cross-Lingual Fine-Tuning</a><br>Bo Zheng, Li Dong, <b>Shaohan Huang</b>, Wenhui Wang, Zewen Chi, Saksham
+          Singhal, Wanxiang Che, Ting Liu, Xia Song, Furu Wei. ACL 2021. <span class="tag lightgreen">Multilingual</span> </li>
+        <li><a href="https://doi.org/10.18653/v1/2021.emnlp-main.257" target="_blank">Allocating Large Vocabulary
+            Capacity for Cross-Lingual Language Model
+            Pre-Training</a><br>Bo Zheng, Li Dong, <b>Shaohan Huang</b>, Saksham Singhal, Wanxiang Che, Ting Liu, Xia
+          Song, Furu Wei. EMNLP 2021. <span class="tag lightgreen">Multilingual</span> </li>
+        <li><a href="https://doi.org/10.18653/v1/2020.coling-main.482" target="_blank">Unsupervised Fine-tuning for Text
+            Clustering</a><br><b>Shaohan Huang</b>, Furu Wei, Lei Cui, Xingxing Zhang, Ming Zhou. COLING 2020. <span class="tag orange">Retrieval & Embedding</span></li>
+        <li><a href="https://doi.org/10.18653/v1/2020.emnlp-main.54" target="_blank">Language Generation with Multi-Hop
+            Reasoning on Commonsense Knowledge
+            Graph</a><br>Haozhe Ji#, Pei Ke, <b>Shaohan Huang</b>, Furu Wei, Xiaoyan Zhu, Minlie Huang. EMNLP 2020.<span class="tag red">Text Generation</span> </li>
+        <li><a href="https://aclanthology.org/2020.aacl-main.28/" target="_blank">Generating Commonsense Explanation by
+            Extracting Bridge Concepts from
+            Reasoning Paths</a><br>Haozhe Ji#, Pei Ke, <b>Shaohan Huang</b>, Furu Wei, Minlie Huang. IJCNLP 2020.<span class="tag red">Text Generation</span> </li>
+        <li><a href="https://doi.org/10.1609/aaai.v33i01.33016546" target="_blank">Dictionary-Guided Editing Networks
+            for Paraphrase Generation</a><br><b>Shaohan Huang</b>, Yu Wu, Furu Wei, Zhongzhi Luan. AAAI 2019.<span class="tag red">Text Generation</span> </li>
+        <li><a href="https://doi.org/10.18653/v1/e17-1059" target="_blank">Learning to Generate Product Reviews from
+            Attributes</a><br>Li Dong, <b>Shaohan Huang</b>, Furu Wei, Mirella Lapata, Ming Zhou, Ke Xu. EACL 2017.<span class="tag red">Text Generation</span> </li>
+      </ul>
       <!-- <h3>Patents</h3>
       <ul>
         <li>Generating document summary</li>
@@ -100,11 +279,15 @@
     <div>
       <h2 id="resources">Students</h2>
       <ul>
+        
         <li><a href="https://github.com/Raibows" target="_blank">Zhaoyang Wang</a> (Master, Sun Yat-sen University)</li>
-        <li><a href="https://scholar.google.com/citations?user=3-dtH0oAAAAJ&hl=zh-CN" target="_blank"> Lingwei Wei </a> (PhD, Chinese Academy of Sciences)</li>
-        <li><a href="https://chang-github-00.github.io/-changma/" target="_blank">Chang Ma</a> (undergraduate, Peking University)</li>
+        <li><a href="https://scholar.google.com/citations?user=3-dtH0oAAAAJ&hl=zh-CN" target="_blank"> Lingwei Wei </a>
+          (PhD, Chinese Academy of Sciences)</li>
+        <li><a href="https://chang-github-00.github.io/-changma/" target="_blank">Chang Ma</a> (undergraduate, Peking
+          University)</li>
         <li><a href="https://470928d55.github.io/" target="_blank">Ting Jiang</a> (PhD, Beihang University)</li>
-        <li><a href="https://scholar.google.com/citations?user=nAagIwEAAAAJ&hl=zh-CN" target="_blank">Yunzhi Yao</a> (PhD, Zhejiang University)</li>
+        <li><a href="https://scholar.google.com/citations?user=nAagIwEAAAAJ&hl=zh-CN" target="_blank">Yunzhi Yao</a>
+          (PhD, Zhejiang University)</li>
         <li><a href="https://cdjhz.github.io/" target="_blank">Haozhe Ji</a> (PhD, Tsinghua University)</li>
         <li><a href="https://tarpelite.github.io/" target="_blank">Tianyu Chen</a> (PhD, Beihang University)</li>
       </ul>
@@ -139,10 +322,14 @@
       <p>
         <a target="_blank" href="http://dustintran.com/blog/a-research-to-engineering-workflow">A Research to
           Engineering Workflow
-        </a>Dustin Tran</p>
+        </a>Dustin Tran
+      </p>
       <p>
-        <a target="_blank" href="http://approximatelycorrect.com/2018/01/29/heuristics-technical-scientific-writing-machine-learning-perspective/">Heuristics for Scientific Writing (a Machine Learning Perspective)
-        </a>Zachary C. Lipton</p>
+        <a target="_blank"
+          href="http://approximatelycorrect.com/2018/01/29/heuristics-technical-scientific-writing-machine-learning-perspective/">Heuristics
+          for Scientific Writing (a Machine Learning Perspective)
+        </a>Zachary C. Lipton
+      </p>
       <!-- <h3>Tools</h3>
       <p>English Writing:</p>
       <p><a target="_blank" href="https://www.linggle.com/">Linggle</a>&nbsp;,&nbsp;<a target="_blank"
